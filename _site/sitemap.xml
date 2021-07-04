@@ -44,6 +44,9 @@
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/posts/</loc>
 </url>
 <url>
@@ -74,6 +77,6 @@
 <loc>http://localhost:4000/category/til/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>http://localhost:4000/page/2/</loc>
 </url>
 </urlset>
