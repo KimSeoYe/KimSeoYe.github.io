@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[TIL] System Programming Study - Day 4</title>
+  <meta name="description" content="fshare 1.0 : Simple File Sharing System">
+  
+  <meta name="author" content="KimSeoYe">
+  <meta name="copyright" content="&copy; KimSeoYe 2021">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="fshare 1.0 : Simple File Sharing System" />
+  <meta property="og:url" content="http://localhost:4000/til/2021/07/01/TIL-System-Programming-Study-Day-4.html">
+  <meta property="og:site_name" content="DevLog" />
+  <meta property="og:title" content="[TIL] System Programming Study - Day 4" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/headers/mountain.jpg" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[TIL] System Programming Study - Day 4">
+  <meta name="twitter:description" content="fshare 1.0 : Simple File Sharing System">
+  <meta name="twitter:image" content="http://localhost:4000/assets/headers/mountain.jpg">
+  <meta name="twitter:url" content="http://localhost:4000/til/2021/07/01/TIL-System-Programming-Study-Day-4.html">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/til/2021/07/01/TIL-System-Programming-Study-Day-4.html">
+	<link rel="alternate" type="application/rss+xml" title="DevLog" href="http://localhost:4000/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="DevLog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+	<li class="nav-link"><a href="/typography/">Typography</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/headers/mountain.jpg);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title">[TIL] System Programming Study - Day 4</h1>
+      <p class="info">by <strong>KimSeoYe</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">July 1, 2021</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/TIL">Til</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="fshare-10--simple-file-sharing-system">fshare 1.0 : Simple File Sharing System</h1>
+
+<h3 id="description">Description</h3>
+<blockquote>
+  <p><strong>Background Study</strong><br />
+Q1. Change server.c and client.c to use multithreading instead of multiprocessing<br />
+Q2. Change server.c such that it regards the message received from a client as the name of a text file and transfers the text data of the file in the local directory back to the client.<br /><br />
+<strong>fshare - Command Line Interface</strong><br /></p>
+  <ul>
+    <li>fshared (server) : <code class="highlighter-rouge">./fshared -p &lt;port_num&gt; -d &lt;dir_name&gt; &amp;</code></li>
+    <li>fshare (client) : <code class="highlighter-rouge">./fshare &lt;ip_addr&gt; &lt;command&gt; (&lt;file_name&gt;)</code><br />
+      <ul>
+        <li>commands : <code class="highlighter-rouge">list</code>, <code class="highlighter-rouge">get</code>, <code class="highlighter-rouge">put</code> <br /></li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="til">TIL</h3>
+<ol>
+  <li>스터디 초반에 공부했던 개념들(바이너리로 읽고 쓰기, directory나 file을 다루는 방법 등)과 TCP/IP를 함께 사용하며 간단한 file server를 만들기 시작했다. 새로운 학습과 복습이 병행되는 경험이었다.</li>
+  <li>지금 우리가 개발하고 있는 것은 asynchronous 버전의 TCP 프로그램으로, 서버와 클라이언트가 각각 한번씩 데이터를 주고 받는다. 데이터를 모아뒀다가 한번에 보내기 때문에 속도가 빠르며, 파일 전송에는 asynchronous를 사용한다.</li>
+  <li>채팅처럼 한번 소켓을 연결한 후 여러 번 데이터를 전송하고 싶을 땐 다른 TCP 모드를 사용해야 한다. (synchronous)</li>
+  <li>Multithreads 버전으로 서버와 클라이언트를 구현할 때, <code class="highlighter-rouge">accept()</code>를 통해 만들어진 새로운 소켓의 file descriptor의 address를 새로운 thread에 직접 넘기는 것은 안전하지 않다 - 다른 thread에 의해 override될 위험이 있다.</li>
+  <li>C언어의 <code class="highlighter-rouge">void *</code> 는 컴파일러가 type check를 하지 않는다.</li>
+</ol>
+
+<h3 id="느낀점">느낀점</h3>
+<ol>
+  <li>Command Line Interface를 개발하며 예외 처리를 할 때, <code class="highlighter-rouge">&lt;ip address&gt;:&lt;port number&gt;</code> parameter가 올바른 형식으로 입력되었는지를 어떻게 확인할 수 있을지가 고민이었다. 여러 아이디어를 떠올리던 중 정규표현식을 사용할 수 있지 않을까 라는 생각을 했는데, 아직 정규 표현식을 제대로 공부해본 적이 없어 아쉬웠다.</li>
+  <li><strong>문제를 정확히 파악하는 것은 정말 중요하다.</strong> 문제를 꼼꼼히 읽으며 내가 구현해야 할 프로그램의 흐름을 이해하고 시작했을 때 훨씬 효율적이고 정확한 프로그래밍을 할 수 있었다.</li>
+</ol>
+
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/TIL">TIL</a>,&nbsp;<a href="/tag/sysprog">sysprog</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">DevLog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+	<li class="nav-link"><a href="/typography/">Typography</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:kimseoye15@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">kimseoye15@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/KimSeoYe" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">KimSeoYe</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://www.instagram.com/sy_callykim/" title="Follow me on Instagram">
+              <i class="fa fa-instagram"></i>
+              <span class="username">sy_callykim</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">A simple yet classy theme for your Jekyll website or blog.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
