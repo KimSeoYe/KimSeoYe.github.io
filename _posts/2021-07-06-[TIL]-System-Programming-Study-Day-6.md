@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[TIL] System Programming Study - Day 6"
-date:   2021-07-02 12:30:00
+date:   2021-07-06 12:30:00
 author: KimSeoYe
 categories: TIL
 tags:   TIL sysprog
