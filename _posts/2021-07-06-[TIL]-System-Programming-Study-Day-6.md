@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[TIL] System Programming Study - Day 5"
+title:  "[TIL] System Programming Study - Day 6"
 date:   2021-07-02 12:30:00
 author: KimSeoYe
 categories: TIL
