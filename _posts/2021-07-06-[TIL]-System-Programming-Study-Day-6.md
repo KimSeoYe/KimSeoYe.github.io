@@ -14,7 +14,7 @@ cover:  "/assets/headers/mountain.jpg"
 ### TIL
 
 - `setsocketopt()`를 사용하여 non-blocking I/O를 구현할 수 있다.
-    ```c
+    ```
     int option = 1 ;
     setsockopt(new_socket, SOL_TCP, TCP_NODELAY, &option, sizeof(option)) ;
     ```
