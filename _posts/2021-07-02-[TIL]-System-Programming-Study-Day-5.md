@@ -21,7 +21,7 @@ cover:  "/assets/headers/mountain.jpg"
 
 -  `strtok()`는 string에서 두 번째 인자(delim)를 찾아 `\0`로 바꾸고 주소를 반환한다. 그러나 연속적으로 string을 tokenize할 때, `strtok()`는 다음 실행 때 첫 번째 인자로 넣어줄 `\0`의 주소를 static으로 선언하여 저장하기 때문에 thread-safe하지 않다. 따라서 multi-thread 프로그램을 작성할 때에는 `strtok_r()` 함수를 사용해야 한다.
 -  다음은 `strtok()`의 내부 구조이다. 보이는 것처럼 `char * olds`가 static으로 선언되어 있으며, `__strtok_r()`의 세번째 인자로 넘겨주는 것을 알 수 있다.
-    ```c
+    ```
     char *
     strtok (char *s, const char *delim)
     {
