@@ -22,7 +22,7 @@ cover:  "/assets/headers/mountain.jpg"
 ### TIL
 1. 스터디 초반에 공부했던 개념들(바이너리로 읽고 쓰기, directory나 file을 다루는 방법 등)과 TCP/IP를 함께 사용하며 간단한 file server를 만들기 시작했다. 새로운 학습과 복습이 병행되는 경험이었다.
 2. 지금 우리가 개발하고 있는 것은 blocking 버전의 TCP 프로그램으로, 서버와 클라이언트가 각각 한번씩 데이터를 주고 받는다. 데이터를 모아뒀다가 한번에 보내기 때문에 속도가 빠르며, 파일 전송에는 blocking을 사용한다. 
-3. 채팅처럼 한번 소켓을 연결한 후 여러 번 데이터를 전송하고 싶을 땐 다른 TCP 모드를 사용해야 한다. (synchronous)
+3. 채팅처럼 한번 소켓을 연결한 후 여러 번 데이터를 전송하고 싶을 땐 다른 TCP 모드를 사용해야 한다. (non-blocking, no delay)
 4. Multithreads 버전으로 서버와 클라이언트를 구현할 때, `accept()`를 통해 만들어진 새로운 소켓의 file descriptor의 address를 새로운 thread에 직접 넘기는 것은 안전하지 않다 - 다른 thread에 의해 override될 위험이 있다.
 5. C언어의 `void *` 는 컴파일러가 type check를 하지 않는다.
 
