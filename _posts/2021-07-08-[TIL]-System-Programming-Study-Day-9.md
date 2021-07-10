@@ -34,7 +34,7 @@ int execv(const char *path, char *const argv[]) ;
 int execvp(const char *file, char *const argv[]) ;
 int exect(const char *path, char *const argv[], char *const envp[]) ;
 ```
-- 첫 번째 인자가 path인 함수들(execl, execle, exect, execv)은 실행할 파일의 path으로 프로그램을 지정하고 그렇지 않은 함수들(execlp, execvp - p가 붙어있음)은 파일의 이름으로 프로그램을 지정한다.
+- 첫 번째 인자가 path인 함수들(execl, execle, exect, execv)은 실행할 파일의 path로 프로그램을 지정하고 그렇지 않은 함수들(execlp, execvp - p가 붙어있음)은 파일의 이름으로 프로그램을 지정한다.
 - execl, execlp, execle (l이 포함) 함수들은 프로그램에 이용할 인수 리스트를 NULL 캐릭터로 끝나는 string으로 받고, exect, execv, execv (c가 포함) 함수들은 NULL 캐릭터로 끝나는 스트링들의 배열으로 받는다.
 - execle, exect 함수들은 환경변수 설정이 가능하다.
 
