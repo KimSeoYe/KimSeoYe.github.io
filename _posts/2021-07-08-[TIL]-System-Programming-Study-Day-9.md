@@ -13,8 +13,6 @@ cover:  "/assets/headers/mountain.jpg"
 - 전에 만들었던 채팅 서버를 이용하여 distributed shell을 구현한다.
 - 서버(dsh)에서 원하는 terminal을 골라 명령어를 보내면 해당 terminal에서 명령을 실행하고 그 결과를 dsh로 전송한다.
 
-<br>
-
 ## TIL
 
 **dup2**
