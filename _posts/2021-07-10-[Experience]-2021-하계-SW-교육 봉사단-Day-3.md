@@ -23,10 +23,12 @@ cover:  "/assets/headers/mountain.jpg"
 
 <br>
 
-### Turtle 실습
-
-▼ 오늘도 어김없이 아이들이 창의력을 마음껏 발휘했다 😆
+▼ 오늘도 어김없이 아이들이 창의력을 마음껏 발휘했다 😆<br>
 ![210710_2](https://drive.google.com/uc?id=1bykizO1zUlVHsBKnMVuvtohC8H2nMpvo)<br>
 ![210710_3](https://drive.google.com/uc?id=14p-nvXWCqq66QPUOxFJ9ZinPZiovPNDi)<br>
+
+▼ 독수리 타자로 수업을 따라오는 친구들을 보면 귀엽기도 하고 기특하기도 하다 ☺️<br>
 ![210710_4](https://drive.google.com/uc?id=1XW83E1Zx_PJjp4CDWFjZuB6yl3dG9w88)<br>
+
+▼ 왼쪽 구석에 학생 한명에게 코드를 열심히 설명하고 있는 내가 보인다 😅<br>
 ![210710_5](https://drive.google.com/uc?id=1a9sT9RdkC2OQkPoNRWgddQGwobn4DsR3)<br>
