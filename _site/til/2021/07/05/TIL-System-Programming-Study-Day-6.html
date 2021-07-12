@@ -6,9 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>welcome</title>
-  <meta name="description" content="A simple yet classy theme for your Jekyll website or blog.
-">
+  <title>[TIL] System Programming Study - Day 6</title>
+  <meta name="description" content="Simple Chatting Program">
   
   <meta name="author" content="KimSeoYe">
   <meta name="copyright" content="&copy; KimSeoYe 2021">
@@ -42,13 +41,12 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="A simple yet classy theme for your Jekyll website or blog.
-" />
-  <meta property="og:url" content="http://localhost:4000/tag/welcome/">
+  <meta property="og:description" content="Simple Chatting Program" />
+  <meta property="og:url" content="http://localhost:4000/til/2021/07/05/TIL-System-Programming-Study-Day-6.html">
   <meta property="og:site_name" content="DevLog" />
-  <meta property="og:title" content="welcome" />
+  <meta property="og:title" content="[TIL] System Programming Study - Day 6" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="http://localhost:4000/assets/logo.png" />
+  <meta property="og:image" content="http://localhost:4000/assets/headers/mountain.jpg" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="612" />
   <meta property="og:image:height" content="605" />
@@ -57,18 +55,17 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="welcome">
-  <meta name="twitter:description" content="A simple yet classy theme for your Jekyll website or blog.
-">
-  <meta name="twitter:image" content="http://localhost:4000/assets/logo.png">
-  <meta name="twitter:url" content="http://localhost:4000/tag/welcome/">
+  <meta name="twitter:title" content="[TIL] System Programming Study - Day 6">
+  <meta name="twitter:description" content="Simple Chatting Program">
+  <meta name="twitter:image" content="http://localhost:4000/assets/headers/mountain.jpg">
+  <meta name="twitter:url" content="http://localhost:4000/til/2021/07/05/TIL-System-Programming-Study-Day-6.html">
   
 
   
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/tag/welcome/">
+  <link rel="canonical" href="http://localhost:4000/til/2021/07/05/TIL-System-Programming-Study-Day-6.html">
 	<link rel="alternate" type="application/rss+xml" title="DevLog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- Tooltips -->
@@ -141,32 +138,227 @@
 
 
     <div class="page-content">
-        <div class="wrapper">
-<div class="page">
+        <div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">Posts in "Welcome"</h1>
-  </header>
+<div class="post-header-container has-cover" style="background-image: url(/assets/headers/mountain.jpg);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title">[TIL] System Programming Study - Day 6</h1>
+      <p class="info">by <strong>KimSeoYe</strong></p>
+    </header>
+  </div>
+</div>
 
-  <span class="page-divider">
-  <span class="one"></span>
-  <span class="two"></span>
-</span>
+<div class="wrapper">
 
 
-  <article class="post-content">
-    <ul class="posts-list">
-      
-      <li><strong><a class="post-link" href="/jekyll/2015/04/20/welcome-to-jekyll.html">Welcome to Jekyll!</a></strong><span class="post-date"> - April 20, 2015</span></li>
-      
-      <li><strong><a class="post-link" href="/jekyll/2015/04/19/welcome-to-jekyll.html">Welcome to Jekyll!</a></strong><span class="post-date"> - April 19, 2015</span></li>
-      
-    </ul>
-  </article>
+
+<section class="post-meta">
+  <div class="post-date">July 5, 2021</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/TIL">Til</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="simple-chatting-program">Simple Chatting Program</h1>
+
+<p><br /></p>
+
+<h3 id="til">TIL</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">setsocketopt()</code>를 사용하여 non-blocking I/O를 구현할 수 있다.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  int option = 1 ;
+  setsockopt(new_socket, SOL_TCP, TCP_NODELAY, &amp;option, sizeof(option)) ;
+</code></pre></div>    </div>
+  </li>
+  <li>option을 1로 주는 것은 Nagle 알고리즘(가능하면 조금씩 자주 보내지 말고 한번에 많이 보낸다)을 off 한다는 의미이다. (0일 경우 Nagle 알고리즘 on -&gt; Default)</li>
+  <li>TCP_NODELAY로 socket의 옵션을 설정하면 write stream을 shutdown하지 않아도 데이터가 전송된다. buffering을 하지 않고 바로 데이터를 주고 받으므로 보내진 데이터가 없어도 계속 recv를 하고 있어야 해 비효율적이지만 간단한 채팅 서버를 구현하는 데는 적합하다.</li>
+  <li><code class="highlighter-rouge">send()</code>를 할 때 connection에 문제가 생긴 경우 SIGPIPE signal을 발생시켜 handler가 따로 없을 경우 프로세스가 종료되지만, MSG_NOSIGNAL 옵션을 사용하여 signal을 보내지 않도록 설정할 수 있다. 이런 경우 <code class="highlighter-rouge">send()</code>에 문제가 있을 경우 -1을 리턴한다.</li>
+  <li>서버나 클라이언트 모두 메세지를 한번에 완전히(끝까지) 받지 못할 가능성이 있으므로, 메세지를 보내기 전에 메세지의 길이를 먼저 보내 체크할 수 있도록 하면 안전하다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="느낀점">느낀점</h3>
+<ul>
+  <li>오늘 Deadlock을 직접 경험해 보았다(…) 교과서에서 읽었던 상황을 직접 마주해보니 신기하기도 했고, 대충 생각하며 코딩하면 실수하기 딱 좋겠구나 하는 생각이 들었다.</li>
+  <li>오늘따라 유난히 디버깅에 걸린 시간이 길었던 것 같다. 돌이켜보니 역시 귀찮음 때문에 논리를 완벽히 정리하고 시작하지 못했던 것이 이유였다.</li>
+</ul>
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/TIL">TIL</a>,&nbsp;<a href="/tag/sysprog">sysprog</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
 
 </div>
 </div>
-<br>
 
     </div>
 
@@ -289,7 +481,7 @@
 
     <div class="site-signature">
       <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
-      <p class="text">A simple yet classy theme for your Jekyll website or blog.
+      <p class="text">Seo-ye's growth records:)
 </p>
     </div>
 

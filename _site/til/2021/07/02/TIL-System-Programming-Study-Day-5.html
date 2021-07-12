@@ -186,54 +186,51 @@
 
 <ul>
   <li><code class="highlighter-rouge">strtok()</code>는 string에서 두 번째 인자(delim)를 찾아 <code class="highlighter-rouge">\0</code>로 바꾸고 주소를 반환한다. 그러나 연속적으로 string을 tokenize할 때, <code class="highlighter-rouge">strtok()</code>는 다음 실행 때 첫 번째 인자로 넣어줄 <code class="highlighter-rouge">\0</code>의 주소를 static으로 선언하여 저장하기 때문에 thread-safe하지 않다. 따라서 multi-thread 프로그램을 작성할 때에는 <code class="highlighter-rouge">strtok_r()</code> 함수를 사용해야 한다.</li>
-  <li>다음은 <code class="highlighter-rouge">strtok()</code>의 내부 구조이다. 보이는 것처럼 <code class="highlighter-rouge">char * olds</code>가 static으로 선언되어 있으며, <code class="highlighter-rouge">__strtok_r()</code>의 세번째 인자로 넘겨주는 것을 알 수 있다.</li>
-</ul>
+  <li>다음은 <code class="highlighter-rouge">strtok()</code>의 내부 구조이다. 보이는 것처럼 <code class="highlighter-rouge">char * olds</code>가 static으로 선언되어 있으며, <code class="highlighter-rouge">__strtok_r()</code>의 세번째 인자로 넘겨주는 것을 알 수 있다.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> char *
+ strtok (char *s, const char *delim)
+ {
+     static char *olds;
+     return __strtok_r (s, delim, &amp;olds);
+ }
 
-<figure class="highlight"><pre><code class="language-c" data-lang="c">    <span class="kt">char</span> <span class="o">*</span>
-    <span class="nf">strtok</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">delim</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">olds</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">__strtok_r</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">olds</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="kt">char</span> <span class="o">*</span>
-    <span class="nf">__strtok_r</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">delim</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">save_ptr</span><span class="p">)</span>
-    <span class="p">{</span>   
-        <span class="kt">char</span> <span class="o">*</span><span class="n">end</span><span class="p">;</span>
+ char *
+ __strtok_r (char *s, const char *delim, char **save_ptr)
+ {   
+     char *end;
         
-        <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
-            <span class="n">s</span> <span class="o">=</span> <span class="o">*</span><span class="n">save_ptr</span><span class="p">;</span>
+     if (s == NULL)
+         s = *save_ptr;
 
-        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s</span> <span class="o">==</span> <span class="sc">'\0'</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="o">*</span><span class="n">save_ptr</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
-            <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-        <span class="p">}</span>
+     if (*s == '\0')
+     {
+         *save_ptr = s;
+         return NULL;
+     }
             
-        <span class="cm">/* Scan leading delimiters.  */</span>
-        <span class="n">s</span> <span class="o">+=</span> <span class="n">strspn</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">delim</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">s</span> <span class="o">==</span> <span class="sc">'\0'</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="o">*</span><span class="n">save_ptr</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
-            <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-        <span class="p">}</span>
+     /* Scan leading delimiters.  */
+     s += strspn (s, delim);
+     if (*s == '\0')
+     {
+         *save_ptr = s;
+         return NULL;
+     }
 
-        <span class="cm">/* Find the end of the token.  */</span>
-        <span class="n">end</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">strcspn</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">delim</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">end</span> <span class="o">==</span> <span class="sc">'\0'</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="o">*</span><span class="n">save_ptr</span> <span class="o">=</span> <span class="n">end</span><span class="p">;</span>
-            <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
-        <span class="p">}</span>
+     /* Find the end of the token.  */
+     end = s + strcspn (s, delim);
+     if (*end == '\0')
+     {
+         *save_ptr = end;
+         return s;
+     }
 
-        <span class="cm">/* Terminate the token and make *SAVE_PTR point past it.  */</span>
-        <span class="o">*</span><span class="n">end</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>
-        <span class="o">*</span><span class="n">save_ptr</span> <span class="o">=</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
-    <span class="p">}</span>
-    </code></pre></figure>
-
-<ul>
+     /* Terminate the token and make *SAVE_PTR point past it.  */
+     *end = '\0';
+     *save_ptr = end + 1;
+     return s;
+ }
+</code></pre></div>    </div>
+  </li>
   <li><code class="highlighter-rouge">strtok()</code>에서 호출되는 <code class="highlighter-rouge">__strtok_r()</code>는 <code class="highlighter-rouge">strtok_r()</code>가 내부적으로 alias되어 있는 것이라고 한다.</li>
 </ul>
 
@@ -542,7 +539,7 @@
 
     <div class="site-signature">
       <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
-      <p class="text">A simple yet classy theme for your Jekyll website or blog.
+      <p class="text">Seo-ye's growth records:)
 </p>
     </div>
 

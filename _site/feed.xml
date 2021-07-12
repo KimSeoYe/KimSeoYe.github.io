@@ -2,20 +2,132 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DevLog</title>
-    <description>A simple yet classy theme for your Jekyll website or blog.
+    <description>Seo-ye's growth records:)
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Jul 2021 23:56:35 +0900</pubDate>
-    <lastBuildDate>Sun, 04 Jul 2021 23:56:35 +0900</lastBuildDate>
+    <pubDate>Mon, 12 Jul 2021 21:54:09 +0900</pubDate>
+    <lastBuildDate>Mon, 12 Jul 2021 21:54:09 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[TIL] xv6 Study - Day 1</title>
+        <description>&lt;h1 id=&quot;lab0-tutorial&quot;&gt;Lab0. Tutorial&lt;/h1&gt; &lt;h3 id=&quot;1-physical-address-space&quot;&gt;1. Physical Address Space&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;GNU 소프트웨어 시스템을 위한 기본 디버거인 gdb(GNU Debugger)를 사용해 보았다. &lt;ul&gt; &lt;li&gt;b : breakpoint&lt;/li&gt; &lt;li&gt;x/Ni ADDR : 메모리에서의 instruction 실행을 확인할...</description>
+        <pubDate>Sun, 11 Jul 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/11/TIL-xv6-Study-Day-1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/11/TIL-xv6-Study-Day-1.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>xv6</category>
+        
+        <category>kernel</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[Experience] 2021 하계 SW 교육 봉사단 - Day 3</title>
+        <description>&lt;h1 id=&quot;hello-python&quot;&gt;Hello, Python!&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;연일초등학교에서의-세번째-수업&quot;&gt;연일초등학교에서의 세번째 수업&lt;/h3&gt; &lt;p&gt;이번주는 주로 지난주에 처음 배웠던 내용의 복습과 약간의 심화학습을 진행하였고, 나는 강의를 하는 주 강사가 아닌 보조 강사의 역할을 했다.&lt;/p&gt; &lt;p&gt;복잡한...</description>
+        <pubDate>Sat, 10 Jul 2021 21:30:00 +0900</pubDate>
+        <link>http://localhost:4000/experience/2021/07/10/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-3.html</link>
+        <guid isPermaLink="true">http://localhost:4000/experience/2021/07/10/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-3.html</guid>
+        
+        <category>SW-education</category>
+        
+        
+        <category>Experience</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] System Programming Study - Day 10</title>
+        <description>&lt;h1 id=&quot;dsh-distributed-shell&quot;&gt;dsh: Distributed Shell&lt;/h1&gt; &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt; &lt;p&gt;&lt;strong&gt;dsh(server)&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;명령을 입력받고 terminal에게 전송하는 역할을 하는 쓰레드와, 각 소켓에 연결되어 실행 결과를 받아오는 쓰레드들이 있다.&lt;/li&gt; &lt;li&gt;새로운 클라이언트들이 연결될 때 마다 Linked list에...</description>
+        <pubDate>Fri, 09 Jul 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/09/TIL-System-Programming-Study-Day-10.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/09/TIL-System-Programming-Study-Day-10.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>sysprog</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] System Programming Study - Day 9</title>
+        <description>&lt;h1 id=&quot;start-implementing-dsh-distributed-shell&quot;&gt;Start implementing dsh: Distributed Shell&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;전에 만들었던 채팅 서버를 이용하여 distributed shell을 구현한다.&lt;/li&gt; &lt;li&gt;서버(dsh)에서 원하는 terminal을 골라 명령어를 보내면 해당 terminal에서 명령을 실행하고 그...</description>
+        <pubDate>Thu, 08 Jul 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/08/TIL-System-Programming-Study-Day-9.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/08/TIL-System-Programming-Study-Day-9.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>sysprog</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] System Programming Study - Day 8</title>
+        <description>&lt;h1 id=&quot;fshare-20---simple-file-sharing-system&quot;&gt;fshare 2.0 - Simple File Sharing System&lt;/h1&gt; &lt;h2 id=&quot;description--questions&quot;&gt;Description &amp;amp; Questions&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;클라이언트의 디렉토리는 모두 비어있다고 가정한다.&lt;/li&gt; &lt;li&gt;서버와 클라이언트 모두 파일 이름과 버전에 대한 메타데이터를 담은 linked list(+ hidden...</description>
+        <pubDate>Wed, 07 Jul 2021 21:30:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/07/TIL-System-Programming-Study-Day-8.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/07/TIL-System-Programming-Study-Day-8.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>sysprog</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] System Programming Study - Day 7</title>
+        <description>&lt;h1 id=&quot;fshare-20&quot;&gt;fshare 2.0&lt;/h1&gt; &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;서버와 클라이언트의 디렉토리는 모두 비어있다고 가정한다.&lt;/li&gt; &lt;li&gt; &lt;p&gt;서버와 클라이언트 모두 파일 이름과 버전에 대한 메타데이터를 담은 linked list(+ hidden file)을 가지고 있다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;클라이언트쪽...</description>
+        <pubDate>Tue, 06 Jul 2021 21:30:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/06/TIL-System-Programming-Study-Day-7.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/06/TIL-System-Programming-Study-Day-7.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>sysprog</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] System Programming Study - Day 6</title>
+        <description>&lt;h1 id=&quot;simple-chatting-program&quot;&gt;Simple Chatting Program&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;til&quot;&gt;TIL&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setsocketopt()&lt;/code&gt;를 사용하여 non-blocking I/O를 구현할 수 있다. &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; int option = 1 ; setsockopt(new_socket, SOL_TCP, TCP_NODELAY, &amp;amp;option,...</description>
+        <pubDate>Mon, 05 Jul 2021 21:30:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/05/TIL-System-Programming-Study-Day-6.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/05/TIL-System-Programming-Study-Day-6.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>sysprog</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>[Experience] 2021 하계 SW 교육 봉사단 - Day 2</title>
         <description>&lt;h1 id=&quot;hello-python&quot;&gt;Hello, Python!&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;연일초등학교에서의-두번째-수업&quot;&gt;연일초등학교에서의 두번째 수업&lt;/h3&gt; &lt;p&gt;이번주는 처음으로 주 강사로서 강의를 하게 되었다. 쉬는시간을 기준으로 앞 타임 강의를 맡아, 지난 주 내용의 복습과 더 자세한 설명, 예제를...</description>
         <pubDate>Sat, 03 Jul 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/experience/2021/07/03/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/experience/2021/07/03/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-2.html</guid>
+        <link>http://localhost:4000/experience/2021/07/03/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/experience/2021/07/03/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-2.html</guid>
         
         <category>SW-education</category>
         
@@ -53,118 +165,6 @@
         
         
         <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] System Programming Study - Day 3</title>
-        <description>&lt;h1 id=&quot;understanding-the-basics-of-tcpip--socket-api&quot;&gt;Understanding the basics of TCP/IP &amp;amp; socket api&lt;/h1&gt; &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;Preparing to implement fshare 1.0: Simple File Sharing System&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Study the basics of the TCP/IP networking with...</description>
-        <pubDate>Wed, 30 Jun 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/06/30/TIL-System-Programming-Study-Day-3.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/06/30/TIL-System-Programming-Study-Day-3.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>sysprog</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] System Programming Study - Day 2</title>
-        <description>&lt;h1 id=&quot;start-making-star-simple-tar&quot;&gt;Start making star: simple tar&lt;/h1&gt; &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;This task asks you to construct &lt;code class=&quot;highlighter-rouge&quot;&gt;star&lt;/code&gt;, a simplified version of a file-archiving program &lt;code class=&quot;highlighter-rouge&quot;&gt;tar&lt;/code&gt;. &lt;br /&gt; star provides...</description>
-        <pubDate>Tue, 29 Jun 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/06/29/TIL-System-Programming-Study-Day-2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/06/29/TIL-System-Programming-Study-Day-2.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>sysprog</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] System Programming Study - Day 1</title>
-        <description>&lt;h1 id=&quot;preparing-for-star--q1--q4&quot;&gt;Preparing for star : Q1 ~ Q4&lt;/h1&gt; &lt;ol&gt; &lt;li&gt;파일을 Binary로 읽고 쓰는 것과 Text로 읽고 쓰는 것의 차이를 이해하기 위해 &lt;strong&gt;fread()&lt;/strong&gt; 와 &lt;strong&gt;fwrite()&lt;/strong&gt; 를 사용해 보았다. &lt;br /&gt;파일을 바이너리로...</description>
-        <pubDate>Mon, 28 Jun 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/06/28/TIL-System-Programming-Study-Day-1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/06/28/TIL-System-Programming-Study-Day-1.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>sysprog</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[Experience] 2021 하계 SW 교육 봉사단 - Day 1</title>
-        <description>&lt;h1 id=&quot;hello-python&quot;&gt;Hello, Python!&lt;/h1&gt;
-
-&lt;h3 id=&quot;연일초등학교에서의-첫번째-수업&quot;&gt;연일초등학교에서의 첫번째 수업&lt;/h3&gt;
-
-</description>
-        <pubDate>Sat, 26 Jun 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/experience/2021/06/26/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/experience/2021/06/26/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-1.html</guid>
-        
-        <category>SW-education</category>
-        
-        
-        <category>Experience</category>
-        
-      </item>
-    
-      <item>
-        <title>[Experience] 2021 하계 SW 교육 봉사단 - OT</title>
-        <description>&lt;h1 id=&quot;sw-교육-봉사단을-준비하는-마음&quot;&gt;SW 교육 봉사단을 준비하는 마음&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;이번 방학 중 한동대학교의 SW 교육 봉사단 활동에 참여하게 되었다. SW 교육 봉사단은 포항시의 초/중/고등학교를 방문하여 학생들을 대상으로 하는 코딩 교육(파이썬, 스크래치, 아두이노,...</description>
-        <pubDate>Wed, 09 Jun 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/experience/2021/06/09/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-OT.html</link>
-        <guid isPermaLink="true">http://localhost:4000/experience/2021/06/09/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-OT.html</guid>
-        
-        <category>SW-education</category>
-        
-        
-        <category>Experience</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different...</description>
-        <pubDate>Mon, 20 Apr 2015 17:43:59 +0900</pubDate>
-        <link>http://localhost:4000/jekyll/2015/04/20/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/2015/04/20/welcome-to-jekyll.html</guid>
-        
-        <category>jekyll</category>
-        
-        <category>welcome</category>
-        
-        
-        <category>Jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different...</description>
-        <pubDate>Sun, 19 Apr 2015 04:25:52 +0900</pubDate>
-        <link>http://localhost:4000/jekyll/2015/04/19/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/2015/04/19/welcome-to-jekyll.html</guid>
-        
-        <category>jekyll</category>
-        
-        <category>welcome</category>
-        
-        
-        <category>Jekyll</category>
         
       </item>
     
