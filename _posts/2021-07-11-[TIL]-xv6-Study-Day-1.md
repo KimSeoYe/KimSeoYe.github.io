@@ -11,7 +11,7 @@ cover:  "/assets/headers/mountain.jpg"
 
 ### 1. Physical Address Space
 
-- GNU 소프트웨어 시스템을 위한 기본 디버거인 gdb(GNU Debugger)를 사용할 수 있다.
+- GNU 소프트웨어 시스템을 위한 기본 디버거인 gdb(GNU Debugger)를 사용해 보았다.
   - b : breakpoint
   - x/Ni ADDR : 메모리에서의 instruction 실행을 확인할 수 있다. (N: 확인할 instruction의 개수)
   - c : continue
