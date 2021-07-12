@@ -11,8 +11,3 @@ cover:  "/assets/headers/mountain.jpg"
 
 ### 연일초등학교에서의 첫번째 수업
 
-
-
-
-
-
