@@ -13,7 +13,7 @@ cover:  "/assets/headers/mountain.jpg"
 
 - GNU 소프트웨어 시스템을 위한 기본 디버거인 gdb(GNU Debugger)를 사용할 수 있다.
   - b : breakpoint
-  - x/Ni ADDR : 메모리에서의 instruction 실행을 확인할 수 있다.
+  - x/Ni ADDR : 메모리에서의 instruction 실행을 확인할 수 있다. (N: 확인할 instruction의 개수)
   - c : continue
   - si : step instruction
 - 초기의 PC는 1MB의 physical memory만 사용할 수 있었다. 
