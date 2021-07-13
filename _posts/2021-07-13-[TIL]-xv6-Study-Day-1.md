@@ -25,4 +25,4 @@ cover:  "/assets/headers/mountain.jpg"
   - load address : 0x00100000 - boot loader가 실제로 커널을 올리는 physical memory address (ROM BIOS의 바로 위)
   - link address : 0xf0100000 or 0x80100000 - 커널 코드가 실행될 곳
 
-- e_entry in ELF header : 프로그램의 entry point의 link address
+- `e_entry` in ELF header : 프로그램의 entry point의 link address
