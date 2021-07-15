@@ -12,7 +12,7 @@ cover:  "/assets/headers/mountain.jpg"
 ### 3. The Kernel
 
 - entry가 CR0_PG를 %CR0에 넣으면 paging hardware가 enable된다.
-- 커널을 high memory에 mapping하기 위해 stack pointer를 initialize한다.
+- 커널을 high memory에 mapping하기 위해 stack pointer를 initialize한다.<br>
   `movl $(stack + KSTACKSIZE), %esp`
   - 여기서 stack은 kernel.sym에 0x8010a5c0으로 선언되어 있으며, KSTACKSIZE는 4096으로 선언되어 있다. 합한 값이 high addr.이므로, entry의 실행이 끝나고 low mapping이 사라져도 stack이 valid할 수 있게 된다.
 - 과정을 마치면 main으로 jumpgksek.
