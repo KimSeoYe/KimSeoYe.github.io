@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[TIL] xv6 Study - Day 2"
-date:   2021-07-13 09:00:00
+title:  "[TIL] xv6 Study - Day 3"
+date:   2021-07-14 09:00:00
 author: KimSeoYe
 categories: TIL
 tags:   TIL xv6 kernel
