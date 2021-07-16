@@ -15,7 +15,7 @@ cover:  "/assets/headers/mountain.jpg"
 - xv6는 trap이 일어났을 때 x86 하드웨어가 stack switch를 하도록 한다.
   - 하드웨어가 stack segment selector와 new value for esp(esp가 이제 어디를 point해야 하는지)를 load한다.
   - switchuvm : user process의 kernel stack의 top address를 task segment descriptor에 저장한다.
-- Todo. 'stack segment selector'와 'task segment descriptor'에 대한 정보 더 찾아보기
+- **Todo.** *stack segment selector*와 *task segment descriptor*에 대한 정보 더 찾아보기
   
 <br>
 
@@ -23,11 +23,11 @@ cover:  "/assets/headers/mountain.jpg"
 1. trap이 일어났을 때, 첫 번째로
   - process가 user mode에서 실행되고 있었을 경우 : task segment descriptor로부터 %esp(stack pointer reg.)와 %ss(stack segment reg.) 를 load >> 새로운 stack에 넣는다.
   - process가 kernel mode에서 실행되고 있었을 경우 : 아무 일도 하지 않는다.
-2. processor가 eflag, cs, eip register를 push한다.
+2. processor가 %eflag, %cs, %eip register를 push한다.
   - 몇몇 trap에 대해서는 error word를 push하기도 한다.
-3. eip와 cs register를 해당하는 IDT entry로부터 load한다.
+3. %eip와 %cs register를 해당하는 IDT entry로부터 load한다.
   - 각 entry가 error code, interrupt number를 push하고, alltraps로 jump한다.
-4. alltraps가 ds, es, fs, gs, 범용 레지스터들을 push한다.
+4. alltraps가 %ds, %es, %fs, %gs, 범용 레지스터들을 push한다.
 
 이 과정을 통해 kernel stack이 trap이 일어났을 때의 processor register 정보들을 담은 stack frame을 포함하게 된다.
 
