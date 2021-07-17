@@ -6,16 +6,88 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Jul 2021 21:54:09 +0900</pubDate>
-    <lastBuildDate>Mon, 12 Jul 2021 21:54:09 +0900</lastBuildDate>
+    <pubDate>Sat, 17 Jul 2021 18:40:43 +0900</pubDate>
+    <lastBuildDate>Sat, 17 Jul 2021 18:40:43 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[TIL] xv6 Study - Day 5</title>
+        <description>&lt;h1 id=&quot;lab1-system-calls&quot;&gt;Lab1. System Calls&lt;/h1&gt; &lt;h3 id=&quot;code--assembly-trap-handlers-textbook-p42&quot;&gt;Code : Assembly trap handlers (textbook p.42)&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;int : processor가 trap을 발생시키도록 하는 instruction (x86에는 256개의 interrupt가 있다.)&lt;/li&gt; &lt;li&gt;xv6는 trap이 일어났을 때 x86 하드웨어가...</description>
+        <pubDate>Fri, 16 Jul 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/16/TIL-xv6-Study-Day-5.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/16/TIL-xv6-Study-Day-5.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>xv6</category>
+        
+        <category>kernel</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] xv6 Study - Day 4</title>
+        <description>&lt;h1 id=&quot;lab1-system-calls&quot;&gt;Lab1. System Calls&lt;/h1&gt; &lt;h3 id=&quot;deeper-understanding---execption-and-system-call&quot;&gt;Deeper Understanding - execption and system call&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;xv6 커널에 event가 일어나면 HW가 kernel mode로 전환하여 trap을 처리하도록 한다.&lt;/li&gt; &lt;li&gt;trap frame : user stack을 가리키는...</description>
+        <pubDate>Thu, 15 Jul 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/15/TIL-xv6-Study-Day-4.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/15/TIL-xv6-Study-Day-4.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>xv6</category>
+        
+        <category>kernel</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] xv6 Study - Day 3</title>
+        <description>&lt;h1 id=&quot;lab0-tutorial&quot;&gt;Lab0. Tutorial&lt;/h1&gt; &lt;h3 id=&quot;3-the-kernel&quot;&gt;3. The Kernel&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;entry가 CR0_PG를 %CR0에 넣으면 paging hardware가 enable된다.&lt;/li&gt; &lt;li&gt;커널을 high memory에 mapping하기 위해 stack pointer를 initialize한다.&lt;br /&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;movl $(stack + KSTACKSIZE), %esp&lt;/code&gt;...</description>
+        <pubDate>Wed, 14 Jul 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/14/TIL-xv6-Study-Day-3.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/14/TIL-xv6-Study-Day-3.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>xv6</category>
+        
+        <category>kernel</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] xv6 Study - Day 2</title>
+        <description>&lt;h1 id=&quot;lab0-tutorial&quot;&gt;Lab0. Tutorial&lt;/h1&gt; &lt;h3 id=&quot;2-the-boot-loader&quot;&gt;2. The Boot Loader&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;ELF : Executable Linkable Format&lt;/li&gt; &lt;li&gt;ELF binary &lt;ul&gt; &lt;li&gt;ELF header&lt;/li&gt; &lt;li&gt;program header table : load될 program section의 list를 담고 있다.&lt;/li&gt; &lt;li&gt;program...</description>
+        <pubDate>Tue, 13 Jul 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/13/TIL-xv6-Study-Day-2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/13/TIL-xv6-Study-Day-2.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>xv6</category>
+        
+        <category>kernel</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>[TIL] xv6 Study - Day 1</title>
         <description>&lt;h1 id=&quot;lab0-tutorial&quot;&gt;Lab0. Tutorial&lt;/h1&gt; &lt;h3 id=&quot;1-physical-address-space&quot;&gt;1. Physical Address Space&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;GNU 소프트웨어 시스템을 위한 기본 디버거인 gdb(GNU Debugger)를 사용해 보았다. &lt;ul&gt; &lt;li&gt;b : breakpoint&lt;/li&gt; &lt;li&gt;x/Ni ADDR : 메모리에서의 instruction 실행을 확인할...</description>
-        <pubDate>Sun, 11 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/11/TIL-xv6-Study-Day-1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/11/TIL-xv6-Study-Day-1.html</guid>
+        <pubDate>Mon, 12 Jul 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/12/TIL-xv6-Study-Day-1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/12/TIL-xv6-Study-Day-1.html</guid>
         
         <category>TIL</category>
         
@@ -96,68 +168,6 @@
         <pubDate>Tue, 06 Jul 2021 21:30:00 +0900</pubDate>
         <link>http://localhost:4000/til/2021/07/06/TIL-System-Programming-Study-Day-7.html</link>
         <guid isPermaLink="true">http://localhost:4000/til/2021/07/06/TIL-System-Programming-Study-Day-7.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>sysprog</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] System Programming Study - Day 6</title>
-        <description>&lt;h1 id=&quot;simple-chatting-program&quot;&gt;Simple Chatting Program&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;til&quot;&gt;TIL&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setsocketopt()&lt;/code&gt;를 사용하여 non-blocking I/O를 구현할 수 있다. &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; int option = 1 ; setsockopt(new_socket, SOL_TCP, TCP_NODELAY, &amp;amp;option,...</description>
-        <pubDate>Mon, 05 Jul 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/05/TIL-System-Programming-Study-Day-6.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/05/TIL-System-Programming-Study-Day-6.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>sysprog</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[Experience] 2021 하계 SW 교육 봉사단 - Day 2</title>
-        <description>&lt;h1 id=&quot;hello-python&quot;&gt;Hello, Python!&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;연일초등학교에서의-두번째-수업&quot;&gt;연일초등학교에서의 두번째 수업&lt;/h3&gt; &lt;p&gt;이번주는 처음으로 주 강사로서 강의를 하게 되었다. 쉬는시간을 기준으로 앞 타임 강의를 맡아, 지난 주 내용의 복습과 더 자세한 설명, 예제를...</description>
-        <pubDate>Sat, 03 Jul 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/experience/2021/07/03/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/experience/2021/07/03/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-2.html</guid>
-        
-        <category>SW-education</category>
-        
-        
-        <category>Experience</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] System Programming Study - Day 5</title>
-        <description>&lt;h1 id=&quot;fshare-10--simple-file-sharing-system&quot;&gt;fshare 1.0 : Simple File Sharing System&lt;/h1&gt; &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;fshare - Command Line Interface&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;fshared (server) : &lt;code class=&quot;highlighter-rouge&quot;&gt;./fshared -p &amp;lt;port_num&amp;gt; -d &amp;lt;dir_name&amp;gt; &amp;amp;&lt;/code&gt;&lt;/li&gt; &lt;li&gt;fshare (client)...</description>
-        <pubDate>Fri, 02 Jul 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/02/TIL-System-Programming-Study-Day-5.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/02/TIL-System-Programming-Study-Day-5.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>sysprog</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] System Programming Study - Day 4</title>
-        <description>&lt;h1 id=&quot;fshare-10--simple-file-sharing-system&quot;&gt;fshare 1.0 : Simple File Sharing System&lt;/h1&gt; &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;Background Study&lt;/strong&gt;&lt;br /&gt; Q1. Change server.c and client.c to use multithreading instead of multiprocessing&lt;br /&gt; Q2. Change server.c such...</description>
-        <pubDate>Thu, 01 Jul 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/01/TIL-System-Programming-Study-Day-4.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/01/TIL-System-Programming-Study-Day-4.html</guid>
         
         <category>TIL</category>
         

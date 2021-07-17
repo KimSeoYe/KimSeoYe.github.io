@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>[TIL] System Programming Study - Day 1</title>
-  <meta name="description" content="Preparing for star : Q1 ~ Q4">
+  <title>[TIL] xv6 Study - Day 5</title>
+  <meta name="description" content="Lab1. System Calls">
   
   <meta name="author" content="KimSeoYe">
   <meta name="copyright" content="&copy; KimSeoYe 2021">
@@ -41,10 +41,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="Preparing for star : Q1 ~ Q4" />
-  <meta property="og:url" content="http://localhost:4000/til/2021/06/28/TIL-System-Programming-Study-Day-1.html">
+  <meta property="og:description" content="Lab1. System Calls" />
+  <meta property="og:url" content="http://localhost:4000/til/2021/07/16/TIL-xv6-Study-Day-5.html">
   <meta property="og:site_name" content="DevLog" />
-  <meta property="og:title" content="[TIL] System Programming Study - Day 1" />
+  <meta property="og:title" content="[TIL] xv6 Study - Day 5" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://localhost:4000/assets/headers/mountain.jpg" />
   <meta property="og:image:type" content="image/png" />
@@ -55,17 +55,17 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[TIL] System Programming Study - Day 1">
-  <meta name="twitter:description" content="Preparing for star : Q1 ~ Q4">
+  <meta name="twitter:title" content="[TIL] xv6 Study - Day 5">
+  <meta name="twitter:description" content="Lab1. System Calls">
   <meta name="twitter:image" content="http://localhost:4000/assets/headers/mountain.jpg">
-  <meta name="twitter:url" content="http://localhost:4000/til/2021/06/28/TIL-System-Programming-Study-Day-1.html">
+  <meta name="twitter:url" content="http://localhost:4000/til/2021/07/16/TIL-xv6-Study-Day-5.html">
   
 
   
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/til/2021/06/28/TIL-System-Programming-Study-Day-1.html">
+  <link rel="canonical" href="http://localhost:4000/til/2021/07/16/TIL-xv6-Study-Day-5.html">
 	<link rel="alternate" type="application/rss+xml" title="DevLog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- Tooltips -->
@@ -145,7 +145,7 @@
 <div class="post-header-container has-cover" style="background-image: url(/assets/headers/mountain.jpg);">
   <div class="scrim has-cover">
     <header class="post-header">
-      <h1 class="title">[TIL] System Programming Study - Day 1</h1>
+      <h1 class="title">[TIL] xv6 Study - Day 5</h1>
       <p class="info">by <strong>KimSeoYe</strong></p>
     </header>
   </div>
@@ -156,7 +156,7 @@
 
 
 <section class="post-meta">
-  <div class="post-date">June 28, 2021</div>
+  <div class="post-date">July 16, 2021</div>
   <div class="post-categories">
   in 
     
@@ -167,22 +167,64 @@
 </section>
 
 <article class="post-content">
-  <h1 id="preparing-for-star--q1--q4">Preparing for star : Q1 ~ Q4</h1>
+  <h1 id="lab1-system-calls">Lab1. System Calls</h1>
 
+<h3 id="code--assembly-trap-handlers-textbook-p42">Code : Assembly trap handlers (textbook p.42)</h3>
+
+<ul>
+  <li>int : processor가 trap을 발생시키도록 하는 instruction (x86에는 256개의 interrupt가 있다.)</li>
+  <li>xv6는 trap이 일어났을 때 x86 하드웨어가 stack switch를 하도록 한다.
+    <ul>
+      <li>하드웨어가 stack segment selector와 new value for esp(esp가 이제 어디를 point해야 하는지)를 load한다.</li>
+      <li>switchuvm : user process의 kernel stack의 top address를 task segment descriptor에 저장한다.</li>
+    </ul>
+  </li>
+  <li><strong>Todo.</strong> <em>stack segment selector</em>와 <em>task segment descriptor</em>에 대한 정보 더 찾아보기</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>more description about trap &amp; stack switch</strong></p>
 <ol>
-  <li>파일을 Binary로 읽고 쓰는 것과 Text로 읽고 쓰는 것의 차이를 이해하기 위해 <strong>fread()</strong> 와 <strong>fwrite()</strong> 를 사용해 보았다. <br />파일을 바이너리로 읽는다는 것은 간단하게 말하면 파일을 byte 단위로 읽는다는 것으로, ‘바이너리 파일을 읽는다’는 것과는 다르다.</li>
-  <li><strong>dirent.h</strong> 의 <strong>opendir()</strong> 로 디렉토리를 열고, <strong>readdir()</strong> 로 읽어서 dirent 구조체를 사용해 directory entry에 접근할 수 있다.</li>
-  <li><strong>stat system call</strong> 을 사용해 파일의 크기, 타입과 같은 정보를 얻을 수 있다.</li>
-  <li>바로 코드를 짜는 것 보다 <strong>생각을 마치고</strong> 짜는 것이 훨씬 더 효율적이고 안전하다는 것을 다시 한 번 깨닫게 되었다. <br />생각하기를 스킵하는 것은 힘이 빠지거나 마음이 급할 때 자주 반복되는 습관인데, 그럴 때마다 헤매는 시간이나 디버깅하는 시간이 배로 늘어났던 것 같다.</li>
-  <li>코드를 통해 내가 짠 프로그램의 논리를 쉽게 읽어낼 수 있도록 늘 세심하게 신경써야겠다. <br />교수님의 코드 리뷰를 들으며, 내가 짠 코드를 읽으며 괴로워했던 경험이 오늘 말고도 꽤 있었다는 것이 기억났다.</li>
+  <li>trap이 일어났을 때, 첫 번째로
+    <ul>
+      <li>process가 user mode에서 실행되고 있었을 경우 : task segment descriptor로부터 %esp(stack pointer reg.)와 %ss(stack segment reg.) 를 load » 새로운 stack에 넣는다.</li>
+      <li>process가 kernel mode에서 실행되고 있었을 경우 : 아무 일도 하지 않는다.</li>
+    </ul>
+  </li>
+  <li>processor가 %eflag, %cs, %eip register를 push한다.
+    <ul>
+      <li>몇몇 trap에 대해서는 error word를 push하기도 한다.</li>
+    </ul>
+  </li>
+  <li>%eip와 %cs register를 해당하는 IDT entry로부터 load한다.
+    <ul>
+      <li>각 entry가 error code, interrupt number를 push하고, alltraps로 jump한다.</li>
+    </ul>
+  </li>
+  <li>alltraps가 %ds, %es, %fs, %gs, 범용 레지스터들을 push한다.</li>
 </ol>
+
+<p>이 과정을 통해 kernel stack이 trap이 일어났을 때의 processor register 정보들을 담은 stack frame을 포함하게 된다.</p>
+
+<p><br /></p>
+
+<h3 id="code--system-calls-textbook-p45">Code : System calls (textbook p.45)</h3>
+
+<p><code class="highlighter-rouge">argint</code>, <code class="highlighter-rouge">argptr</code>, <code class="highlighter-rouge">argstr</code>, <code class="highlighter-rouge">argfd</code> : n번째 system call argument에 접근할 수 있도록 돕는 함수들</p>
+<ul>
+  <li>trap frame에 저장된 user-space %esp 는 system call의 return address를 담고 있다.</li>
+  <li>system call의 argument들은 그 바로 위에 있다. (%esp + 4)</li>
+  <li>따라서 n번째 argument는 %esp + 4 + 4*n 에 위치해 있다.</li>
+</ul>
+
 
 </article>
 
 
 
 <section class="tags">
-  <strong>Tags:</strong> <a href="/tag/TIL">TIL</a>,&nbsp;<a href="/tag/sysprog">sysprog</a>
+  <strong>Tags:</strong> <a href="/tag/TIL">TIL</a>,&nbsp;<a href="/tag/xv6">xv6</a>,&nbsp;<a href="/tag/kernel">kernel</a>
 </section>
 
 

@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>[TIL] System Programming Study - Day 1</title>
-  <meta name="description" content="Preparing for star : Q1 ~ Q4">
+  <title>[TIL] xv6 Study - Day 3</title>
+  <meta name="description" content="Lab0. Tutorial">
   
   <meta name="author" content="KimSeoYe">
   <meta name="copyright" content="&copy; KimSeoYe 2021">
@@ -41,10 +41,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="Preparing for star : Q1 ~ Q4" />
-  <meta property="og:url" content="http://localhost:4000/til/2021/06/28/TIL-System-Programming-Study-Day-1.html">
+  <meta property="og:description" content="Lab0. Tutorial" />
+  <meta property="og:url" content="http://localhost:4000/til/2021/07/14/TIL-xv6-Study-Day-3.html">
   <meta property="og:site_name" content="DevLog" />
-  <meta property="og:title" content="[TIL] System Programming Study - Day 1" />
+  <meta property="og:title" content="[TIL] xv6 Study - Day 3" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://localhost:4000/assets/headers/mountain.jpg" />
   <meta property="og:image:type" content="image/png" />
@@ -55,17 +55,17 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[TIL] System Programming Study - Day 1">
-  <meta name="twitter:description" content="Preparing for star : Q1 ~ Q4">
+  <meta name="twitter:title" content="[TIL] xv6 Study - Day 3">
+  <meta name="twitter:description" content="Lab0. Tutorial">
   <meta name="twitter:image" content="http://localhost:4000/assets/headers/mountain.jpg">
-  <meta name="twitter:url" content="http://localhost:4000/til/2021/06/28/TIL-System-Programming-Study-Day-1.html">
+  <meta name="twitter:url" content="http://localhost:4000/til/2021/07/14/TIL-xv6-Study-Day-3.html">
   
 
   
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/til/2021/06/28/TIL-System-Programming-Study-Day-1.html">
+  <link rel="canonical" href="http://localhost:4000/til/2021/07/14/TIL-xv6-Study-Day-3.html">
 	<link rel="alternate" type="application/rss+xml" title="DevLog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- Tooltips -->
@@ -145,7 +145,7 @@
 <div class="post-header-container has-cover" style="background-image: url(/assets/headers/mountain.jpg);">
   <div class="scrim has-cover">
     <header class="post-header">
-      <h1 class="title">[TIL] System Programming Study - Day 1</h1>
+      <h1 class="title">[TIL] xv6 Study - Day 3</h1>
       <p class="info">by <strong>KimSeoYe</strong></p>
     </header>
   </div>
@@ -156,7 +156,7 @@
 
 
 <section class="post-meta">
-  <div class="post-date">June 28, 2021</div>
+  <div class="post-date">July 14, 2021</div>
   <div class="post-categories">
   in 
     
@@ -167,22 +167,39 @@
 </section>
 
 <article class="post-content">
-  <h1 id="preparing-for-star--q1--q4">Preparing for star : Q1 ~ Q4</h1>
+  <h1 id="lab0-tutorial">Lab0. Tutorial</h1>
 
-<ol>
-  <li>파일을 Binary로 읽고 쓰는 것과 Text로 읽고 쓰는 것의 차이를 이해하기 위해 <strong>fread()</strong> 와 <strong>fwrite()</strong> 를 사용해 보았다. <br />파일을 바이너리로 읽는다는 것은 간단하게 말하면 파일을 byte 단위로 읽는다는 것으로, ‘바이너리 파일을 읽는다’는 것과는 다르다.</li>
-  <li><strong>dirent.h</strong> 의 <strong>opendir()</strong> 로 디렉토리를 열고, <strong>readdir()</strong> 로 읽어서 dirent 구조체를 사용해 directory entry에 접근할 수 있다.</li>
-  <li><strong>stat system call</strong> 을 사용해 파일의 크기, 타입과 같은 정보를 얻을 수 있다.</li>
-  <li>바로 코드를 짜는 것 보다 <strong>생각을 마치고</strong> 짜는 것이 훨씬 더 효율적이고 안전하다는 것을 다시 한 번 깨닫게 되었다. <br />생각하기를 스킵하는 것은 힘이 빠지거나 마음이 급할 때 자주 반복되는 습관인데, 그럴 때마다 헤매는 시간이나 디버깅하는 시간이 배로 늘어났던 것 같다.</li>
-  <li>코드를 통해 내가 짠 프로그램의 논리를 쉽게 읽어낼 수 있도록 늘 세심하게 신경써야겠다. <br />교수님의 코드 리뷰를 들으며, 내가 짠 코드를 읽으며 괴로워했던 경험이 오늘 말고도 꽤 있었다는 것이 기억났다.</li>
-</ol>
+<h3 id="3-the-kernel">3. The Kernel</h3>
+
+<ul>
+  <li>entry가 CR0_PG를 %CR0에 넣으면 paging hardware가 enable된다.</li>
+  <li>커널을 high memory에 mapping하기 위해 stack pointer를 initialize한다.<br />
+<code class="highlighter-rouge">movl $(stack + KSTACKSIZE), %esp</code>
+    <ul>
+      <li>여기서 stack은 kernel.sym에 0x8010a5c0으로 선언되어 있으며, KSTACKSIZE는 4096으로 선언되어 있다. 합한 값이 high addr.이므로, entry의 실행이 끝나고 low mapping이 사라져도 stack이 valid할 수 있게 된다.</li>
+    </ul>
+  </li>
+  <li>과정을 마치면 main으로 jump한다.</li>
+</ul>
+
+<p><strong>The stack</strong></p>
+<ul>
+  <li>esp : stack pointer, 현재 사용되는 stack의 가장 낮은 지점을 point한다.</li>
+  <li>ebp : base pointer, SW convention과 관련이 있다.
+    <ul>
+      <li>C function의 entry에서 함수의 prologue code가 직전 함수의 ebp를 stack에 저장한다.</li>
+      <li>현재의 esp를 ebp에 copy한다. (새로운 base pointer)</li>
+      <li>저장된 ebp 값들을 활용하면 nested call을 backtrace할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
 
 </article>
 
 
 
 <section class="tags">
-  <strong>Tags:</strong> <a href="/tag/TIL">TIL</a>,&nbsp;<a href="/tag/sysprog">sysprog</a>
+  <strong>Tags:</strong> <a href="/tag/TIL">TIL</a>,&nbsp;<a href="/tag/xv6">xv6</a>,&nbsp;<a href="/tag/kernel">kernel</a>
 </section>
 
 
