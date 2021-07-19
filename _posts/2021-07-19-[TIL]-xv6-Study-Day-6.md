@@ -10,7 +10,7 @@ cover:  "/assets/headers/mountain.jpg"
 
 # Lab 1. System Calls
 
-**Example w/ `wait()` system call**
+### Example w/ `wait()` system call
 
 1. User program : call `wait()`
 2. trapasm.S : build trap frame (stack switch) & call `trap()`
@@ -22,7 +22,7 @@ cover:  "/assets/headers/mountain.jpg"
 
 # Lab 2. Scheduling
 
-> **Goals:** Understand how the scheduler works. Understand how to implement a scheduling policy and characterize its impact on performance. Understand priority inversion and a possible solution for it.
+**Goals:** Understand how the scheduler works. Understand how to implement a scheduling policy and characterize its impact on performance. Understand priority inversion and a possible solution for it.
 
 
 ### Chapter 5. Scheduling (p.59~)
