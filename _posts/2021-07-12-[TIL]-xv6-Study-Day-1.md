@@ -7,7 +7,7 @@ categories: TIL
 tags:   TIL xv6 kernel
 cover:  "/assets/headers/mountain.jpg"
 ---
-# Lab0. Tutorial
+# Lab 0. Tutorial
 
 ### 1. Physical Address Space
 

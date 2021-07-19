@@ -7,7 +7,7 @@ categories: TIL
 tags:   TIL xv6 kernel
 cover:  "/assets/headers/mountain.jpg"
 ---
-# Lab1. System Calls
+# Lab 1. System Calls
 
 ### Code : Assembly trap handlers (textbook p.42)
 
