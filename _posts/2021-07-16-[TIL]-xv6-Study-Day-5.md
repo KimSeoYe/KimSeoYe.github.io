@@ -5,7 +5,7 @@ date:   2021-07-16 09:00:00
 author: KimSeoYe
 categories: TIL
 tags:   TIL xv6 kernel
-cover:  "/assets/headers/mountain.jpg"
+cover:  "/assets/headers/hgu1.jpeg"
 ---
 # Lab 1. System Calls
 

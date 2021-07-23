@@ -5,7 +5,7 @@ date:   2021-07-06 12:30:00
 author: KimSeoYe
 categories: TIL
 tags:   TIL sysprog
-cover:  "/assets/headers/mountain.jpg"
+cover:  "/assets/headers/hgu1.jpeg"
 ---
 # fshare 2.0
 

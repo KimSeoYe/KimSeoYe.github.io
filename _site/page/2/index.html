@@ -135,6 +135,8 @@
 
 	
 
+	
+
 
       </ul>
     </nav>
@@ -145,7 +147,7 @@
     <div class="page-content">
         <div class="home">
 
-<div class="site-header-container has-cover" style="background-image: url(/assets/header_image.jpg);">
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image.jpeg);">
   <div class="scrim has-cover">
     <header class="site-header">
       <h1 class="title">DevLog</h1>
@@ -159,13 +161,13 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/experience/2021/07/10/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-3.html">[Experience] 2021 하계 SW 교육 봉사단 - Day 3</a>
+      <a class="post-link" href="/experience/2021/07/17/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-4.html">[Experience] 2021 하계 SW 교육 봉사단 - Day 4</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>Hello, Python! 연일초등학교에서의 세번째 수업 이번주는 주로 지난주에 처음 배웠던 내용의 복습과 약간의 심화학습을 진행하였고, 나는 강의를 하는 주 강사가 아닌 보조 강사의 역할을 했다. 복잡한 조건문과 반복문 등 이론적인 개념을 설명하니 지루함을 느끼거나 집중하지 못하는 아이들이 생겨서, 수업을 잘 따라오지 못하고 있는 친구들이 있는지 계속해서 살피며 다녔다. 그러면서 친구들에게...</p>
+      <p>Hello, Python! 연일초등학교에서의 네번째 수업 지지난주와 마찬가지로 이번주는 내가 첫 타임 강사를 맡게 되었다. if/elif/else와 for문 복습, 반복문 while, 그리고 함수까지 설명하기로 했는데, 다루는 내용이 많기도 하고 지난주에 아이들이 내용 이해를 조금 어려워했던 것 같아서 최대한 아이들의 눈높이에 맞게, 그리고 재밌게 개념을 설명하기 위해 노력해 보았다. 간단한 반복문 - while...</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">July 10, 2021</div>
+      <div class="post-date">July 17, 2021</div>
       <div class="post-categories">
       in 
         
@@ -181,13 +183,13 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/til/2021/07/09/TIL-System-Programming-Study-Day-10.html">[TIL] System Programming Study - Day 10</a>
+      <a class="post-link" href="/til/2021/07/16/TIL-xv6-Study-Day-5.html">[TIL] xv6 Study - Day 5</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>dsh: Distributed Shell Description dsh(server) 명령을 입력받고 terminal에게 전송하는 역할을 하는 쓰레드와, 각 소켓에 연결되어 실행 결과를 받아오는 쓰레드들이 있다. 새로운 클라이언트들이 연결될 때 마다 Linked list에 임의로 생성한 ID와 해당하는 소켓의 file descriptor를 저장해둬야 한다. 실행 중에 dsh에서 특정 문자를 보내면 terminal의 명령어 실행을 종료시킬 수 있어야 한다. 유저가...</p>
+      <p>Lab 1. System Calls Code : Assembly trap handlers (textbook p.42) int : processor가 trap을 발생시키도록 하는 instruction (x86에는 256개의 interrupt가 있다.) xv6는 trap이 일어났을 때 x86 하드웨어가 stack switch를 하도록 한다. 하드웨어가 stack segment selector와 new value for esp(esp가 이제 어디를 point해야 하는지)를 load한다. switchuvm : user process의 kernel...</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">July 9, 2021</div>
+      <div class="post-date">July 16, 2021</div>
       <div class="post-categories">
       in 
         
@@ -203,13 +205,13 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/til/2021/07/08/TIL-System-Programming-Study-Day-9.html">[TIL] System Programming Study - Day 9</a>
+      <a class="post-link" href="/til/2021/07/15/TIL-xv6-Study-Day-4.html">[TIL] xv6 Study - Day 4</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>Start implementing dsh: Distributed Shell Description 전에 만들었던 채팅 서버를 이용하여 distributed shell을 구현한다. 서버(dsh)에서 원하는 terminal을 골라 명령어를 보내면 해당 terminal에서 명령을 실행하고 그 결과를 dsh로 전송한다. TIL dup2 int dup2(int oldfd, int newfd); newfd가 oldfd와 같은 open file descriptor를 참조하도록 adjust된다. 즉, oldfd가 newfd에 덮어씌워진다. 실행에 성공할 경우...</p>
+      <p>Lab 1. System Calls Deeper Understanding - execption and system call xv6 커널에 event가 일어나면 HW가 kernel mode로 전환하여 trap을 처리하도록 한다. trap frame : user stack을 가리키는 pointer 등 중요한 argument들을 trap handler에게 넘겨주기 위해 사용되는 data structure이다. syscall syscall() : 모든 system call들에 대한 top level handler. trap...</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">July 8, 2021</div>
+      <div class="post-date">July 15, 2021</div>
       <div class="post-categories">
       in 
         
@@ -225,13 +227,13 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/til/2021/07/07/TIL-System-Programming-Study-Day-8.html">[TIL] System Programming Study - Day 8</a>
+      <a class="post-link" href="/til/2021/07/14/TIL-xv6-Study-Day-3.html">[TIL] xv6 Study - Day 3</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>fshare 2.0 - Simple File Sharing System Description &amp; Questions 클라이언트의 디렉토리는 모두 비어있다고 가정한다. 서버와 클라이언트 모두 파일 이름과 버전에 대한 메타데이터를 담은 linked list(+ hidden file)을 가지고 있다. (+) 처음 서버를 실행시켰을 때, 서버가 관리하는 디렉토리에 이미 존재하는 파일들이 있었을 경우에 대한 해결 방법이 필요하다. (+) 서버나 클라이언트...</p>
+      <p>Lab 0. Tutorial 3. The Kernel entry가 CR0_PG를 %CR0에 넣으면 paging hardware가 enable된다. 커널을 high memory에 mapping하기 위해 stack pointer를 initialize한다. movl $(stack + KSTACKSIZE), %esp 여기서 stack은 kernel.sym에 0x8010a5c0으로 선언되어 있으며, KSTACKSIZE는 4096으로 선언되어 있다. 합한 값이 high addr.이므로, entry의 실행이 끝나고 low mapping이 사라져도 stack이 valid할 수 있게...</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">July 7, 2021</div>
+      <div class="post-date">July 14, 2021</div>
       <div class="post-categories">
       in 
         
@@ -247,13 +249,13 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/til/2021/07/06/TIL-System-Programming-Study-Day-7.html">[TIL] System Programming Study - Day 7</a>
+      <a class="post-link" href="/til/2021/07/13/TIL-xv6-Study-Day-2.html">[TIL] xv6 Study - Day 2</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>fshare 2.0 Description 서버와 클라이언트의 디렉토리는 모두 비어있다고 가정한다. 서버와 클라이언트 모두 파일 이름과 버전에 대한 메타데이터를 담은 linked list(+ hidden file)을 가지고 있다. 클라이언트쪽 디렉토리에 새로운 파일이 생길 경우 자동으로 서버에 put 한다. (using inotify()) 서버는 파일을 받아 버전 정보를 업데이트한 뒤, 해당 클라이언트에게 버전 넘버를 알려준다. 클라이언트는 서버로부터...</p>
+      <p>Lab 0. Tutorial 2. The Boot Loader ELF : Executable Linkable Format ELF binary ELF header program header table : load될 program section의 list를 담고 있다. program sections : .text .rodata .data .bss … VMA (Virtual Memory Address) : Link address. 해당 section이 load 되어야 하는 주소 LMA (Load Memory...</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">July 6, 2021</div>
+      <div class="post-date">July 13, 2021</div>
       <div class="post-categories">
       in 
         
@@ -279,7 +281,7 @@
       </a>
 			
 		
-		<span class="page-number">Page 2 of 4</span>
+		<span class="page-number">Page 2 of 5</span>
 		
 		<a class="newer-posts" href="/page/3/">
       <span class="fa-stack fa-lg">
@@ -323,6 +325,8 @@
 
 	
 	<li class="nav-link"><a href="/typography/">Typography</a>
+	
+
 	
 
 	

@@ -5,7 +5,7 @@ date:   2021-06-26 12:30:00
 author: KimSeoYe
 categories: Experience
 tags:	SW-education
-cover:  "/assets/headers/mountain.jpg"
+cover:  "/assets/headers/hgu1.jpeg"
 ---
 # Hello, Python!
 
