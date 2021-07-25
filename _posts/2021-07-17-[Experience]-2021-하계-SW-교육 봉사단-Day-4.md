@@ -23,12 +23,12 @@ cover:  "/assets/headers/hgu1.jpeg"
 
 > "열 번 찍어 안 넘어가는 나무 없다"는 속담을 파이썬 프로그램으로 만든다면 다음과 같이 될 것이다.
 ```
->>> treeHit = 0
->>> while treeHit < 10:
-...     treeHit = treeHit +1
-...     print("나무를 %d번 찍었습니다." % treeHit)
-...     if treeHit == 10:
-...         print("나무 넘어갑니다.")
+treeHit = 0
+while treeHit < 10:
+...  treeHit = treeHit +1
+...  print("나무를 %d번 찍었습니다." % treeHit)
+...  if treeHit == 10:
+...      print("나무 넘어갑니다.")
 ...
 나무를 1번 찍었습니다.
 나무를 2번 찍었습니다.
