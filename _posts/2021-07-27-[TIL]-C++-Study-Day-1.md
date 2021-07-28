@@ -12,7 +12,7 @@ cover:  "/assets/headers/hgu1.jpeg"
 
 Textbook : [C++ Crash Course](https://learning.oreilly.com/library/view/c-crash-course/9781098122553/)
 
-# Chapter 2. Types
+## Chapter 2. Types
 
 - C++의 다양한 fundamental type(primitive type)들과 그에 해당하는 format specifier들을 공부했다.
 - C++에서 변수와 array, string을 초기화하는 방법을 알게 되었다. 
