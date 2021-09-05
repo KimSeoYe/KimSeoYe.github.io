@@ -6,9 +6,39 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Jul 2021 01:26:51 +0900</pubDate>
-    <lastBuildDate>Sat, 24 Jul 2021 01:26:51 +0900</lastBuildDate>
+    <pubDate>Wed, 28 Jul 2021 21:22:40 +0900</pubDate>
+    <lastBuildDate>Wed, 28 Jul 2021 21:22:40 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[TIL] C++ Study - Day 2</title>
+        <description>&lt;h1 id=&quot;chapter-3-reference-types&quot;&gt;Chapter 3. Reference Types&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;C++ 의 references (using &amp;amp;)에 대해 공부했다.&lt;/li&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; 키워드에 대해 공부했다. &lt;ul&gt; &lt;li&gt;함수의 argument를 const로 선언하면 함수의 scope 내에서 해당 argument의 수정을 막는다.&lt;/li&gt;...</description>
+        <pubDate>Wed, 28 Jul 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/07/28/TIL-C++-Study-Day-2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/07/28/TIL-C++-Study-Day-2.html</guid>
+        
+        <category>TIL</category>
+        
+        <category>c++</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[Experience] 2021 하계 SW 교육 봉사단 - Day 5</title>
+        <description>&lt;h1 id=&quot;hello-python&quot;&gt;Hello, Python!&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;연일초등학교에서의-마지막-수업&quot;&gt;연일초등학교에서의 마지막 수업&lt;/h3&gt; &lt;p&gt;봉사를 시작한 지 얼마 되지 않은 것 같은데 어느새 5주가 지나고 마지막 수업이 끝났다. 처음을 돌아보면 긴장도 많이 했고 아이들에게 잘...</description>
+        <pubDate>Sun, 25 Jul 2021 19:00:00 +0900</pubDate>
+        <link>http://localhost:4000/experience/2021/07/25/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-5.html</link>
+        <guid isPermaLink="true">http://localhost:4000/experience/2021/07/25/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-5.html</guid>
+        
+        <category>SW-education</category>
+        
+        
+        <category>Experience</category>
+        
+      </item>
     
       <item>
         <title>[TIL] xv6 Study - Day 10</title>
@@ -138,42 +168,6 @@
         <pubDate>Thu, 15 Jul 2021 18:00:00 +0900</pubDate>
         <link>http://localhost:4000/til/2021/07/15/TIL-xv6-Study-Day-4.html</link>
         <guid isPermaLink="true">http://localhost:4000/til/2021/07/15/TIL-xv6-Study-Day-4.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>xv6</category>
-        
-        <category>kernel</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] xv6 Study - Day 3</title>
-        <description>&lt;h1 id=&quot;lab-0-tutorial&quot;&gt;Lab 0. Tutorial&lt;/h1&gt; &lt;h3 id=&quot;3-the-kernel&quot;&gt;3. The Kernel&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;entry가 CR0_PG를 %CR0에 넣으면 paging hardware가 enable된다.&lt;/li&gt; &lt;li&gt;커널을 high memory에 mapping하기 위해 stack pointer를 initialize한다.&lt;br /&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;movl $(stack + KSTACKSIZE),...</description>
-        <pubDate>Wed, 14 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/14/TIL-xv6-Study-Day-3.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/14/TIL-xv6-Study-Day-3.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>xv6</category>
-        
-        <category>kernel</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] xv6 Study - Day 2</title>
-        <description>&lt;h1 id=&quot;lab-0-tutorial&quot;&gt;Lab 0. Tutorial&lt;/h1&gt; &lt;h3 id=&quot;2-the-boot-loader&quot;&gt;2. The Boot Loader&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;ELF : Executable Linkable Format&lt;/li&gt; &lt;li&gt;ELF binary &lt;ul&gt; &lt;li&gt;ELF header&lt;/li&gt; &lt;li&gt;program header table : load될 program section의 list를 담고 있다.&lt;/li&gt;...</description>
-        <pubDate>Tue, 13 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/13/TIL-xv6-Study-Day-2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/13/TIL-xv6-Study-Day-2.html</guid>
         
         <category>TIL</category>
         

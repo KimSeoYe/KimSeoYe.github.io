@@ -137,6 +137,10 @@
 
 	
 
+	
+
+	
+
 
       </ul>
     </nav>
@@ -158,6 +162,50 @@
 
 <div class="wrapper">
 <ul class="post-list">
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/til/2021/07/20/TIL-xv6-Study-Day-7.html">[TIL] xv6 Study - Day 7</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p>Lab 2. Scheduling Goals: Understand how the scheduler works. Understand how to implement a scheduling policy and characterize its impact on performance. Understand priority inversion and a possible solution for it. System Call setpriority() system call을 추가하기 위해서, proc.c에 setpriority(int pid, int val)를 implement한다. defs.h에 setpriority의 정의를 추가한다. sysproc.c에 handler...</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">July 20, 2021</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/category/TIL">Til</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/til/2021/07/19/TIL-xv6-Study-Day-6.html">[TIL] xv6 Study - Day 6</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p>Lab 1. System Calls Example w/ wait() system call User program : call wait() trapasm.S : build trap frame (stack switch) &amp; call trap() trap.c : trap frame에 저장된 trap number가 T_SYSCALL이면 call syscall() syscall.c : syscall table에서 tf-&gt;eax에 저장된 SYS_wait을 index로 사용하여 system call handler function인 sys_wait()을 부른다 sys_wait...</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">July 19, 2021</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/category/TIL">Til</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
   
   <li>
     <h2>
@@ -222,50 +270,6 @@
     </section>
   </li>
   
-  <hr>
-  
-  
-  <li>
-    <h2>
-      <a class="post-link" href="/til/2021/07/14/TIL-xv6-Study-Day-3.html">[TIL] xv6 Study - Day 3</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>Lab 0. Tutorial 3. The Kernel entry가 CR0_PG를 %CR0에 넣으면 paging hardware가 enable된다. 커널을 high memory에 mapping하기 위해 stack pointer를 initialize한다. movl $(stack + KSTACKSIZE), %esp 여기서 stack은 kernel.sym에 0x8010a5c0으로 선언되어 있으며, KSTACKSIZE는 4096으로 선언되어 있다. 합한 값이 high addr.이므로, entry의 실행이 끝나고 low mapping이 사라져도 stack이 valid할 수 있게...</p>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">July 14, 2021</div>
-      <div class="post-categories">
-      in 
-        
-        <a href="/category/TIL">Til</a>
-        
-      
-      </div>
-    </section>
-  </li>
-  
-  <hr>
-  
-  
-  <li>
-    <h2>
-      <a class="post-link" href="/til/2021/07/13/TIL-xv6-Study-Day-2.html">[TIL] xv6 Study - Day 2</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>Lab 0. Tutorial 2. The Boot Loader ELF : Executable Linkable Format ELF binary ELF header program header table : load될 program section의 list를 담고 있다. program sections : .text .rodata .data .bss … VMA (Virtual Memory Address) : Link address. 해당 section이 load 되어야 하는 주소 LMA (Load Memory...</p>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">July 13, 2021</div>
-      <div class="post-categories">
-      in 
-        
-        <a href="/category/TIL">Til</a>
-        
-      
-      </div>
-    </section>
-  </li>
-  
   
 </ul>
 
@@ -281,7 +285,7 @@
       </a>
 			
 		
-		<span class="page-number">Page 2 of 5</span>
+		<span class="page-number">Page 2 of 6</span>
 		
 		<a class="newer-posts" href="/page/3/">
       <span class="fa-stack fa-lg">
@@ -325,6 +329,10 @@
 
 	
 	<li class="nav-link"><a href="/typography/">Typography</a>
+	
+
+	
+
 	
 
 	

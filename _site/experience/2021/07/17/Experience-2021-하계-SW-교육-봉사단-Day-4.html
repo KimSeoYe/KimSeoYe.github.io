@@ -134,6 +134,10 @@
 
 	
 
+	
+
+	
+
 
       </ul>
     </nav>
@@ -185,12 +189,14 @@
 
 <blockquote>
   <p>“열 번 찍어 안 넘어가는 나무 없다”는 속담을 파이썬 프로그램으로 만든다면 다음과 같이 될 것이다.</p>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; treeHit = 0
-&gt;&gt;&gt; while treeHit &lt; 10:
-...     treeHit = treeHit +1
-...     print("나무를 %d번 찍었습니다." % treeHit)
-...     if treeHit == 10:
-...         print("나무 넘어갑니다.")
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>treeHit = 0
+while treeHit &lt; 10:
+...  treeHit = treeHit +1
+...  print("나무를 %d번 찍었습니다." % treeHit)
+...  if treeHit == 10:
+...      print("나무 넘어갑니다.")
 ...
 나무를 1번 찍었습니다.
 나무를 2번 찍었습니다.
@@ -203,8 +209,7 @@
 나무를 9번 찍었습니다.
 나무를 10번 찍었습니다.
 나무 넘어갑니다.
-</code></pre></div>  </div>
-</blockquote>
+</code></pre></div></div>
 
 <p>“열 번 찍어 안 넘어가는 나무 없다” 라는 속담을 가지고 반복문을 설명할 생각을 하다니, 너무 재치있고 웃겨서 이 예제를 수업에 활용해보고 싶어졌는데 문득 ‘요즘 아이들이 이 속담을 알까? 초등학생들도 이게 재밌을까..?’ 라는 걱정이 되기 시작했다…</p>
 
@@ -213,15 +218,16 @@
 <blockquote>
   <p>목표: 몬스터를 10마리 잡아야 레벨업을 시켜주는 프로그램을 만들어보자!
 먼저, 아주 간단한 버전으로 😆</p>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill = 0
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill = 0
 
 while kill &lt; 10:
   kill = kill + 1
   print("몬스터를 ", kill, " 마리 잡았습니다.")
 
 print("레벨업!!!")
-</code></pre></div>  </div>
-</blockquote>
+</code></pre></div></div>
 
 <p>내가 떠올리고도 얼마나 뿌듯하던지, 이거라면 그래도 아이들이 조금은 재밌게 개념을 받아들여주지 않을까 기대했고 오늘 반응도 나쁘지 않았던 것 같다 😆 몬스터가 들어가야 할 자리에 친구의 이름을 넣어놓는 짖궂은 아이들이 있긴 했지만 😅</p>
 
@@ -242,8 +248,7 @@ print("레벨업!!!")
 
 <p>간단한 더하기 함수 예제와 함께 개념 설명이 끝났으니 이제는 활용을 해볼 차례다. 앞서 만들었던 몬스터 잡기 예제를 적극 활용하여 새로운 예제를 만들어 보았다.</p>
 
-<blockquote>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def play ():
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def play ():
   kill = 0
       while kill &lt; 10:
           kill = kill + 1
@@ -253,8 +258,7 @@ print("레벨업!!!")
 play()
 play()
 play()
-</code></pre></div>  </div>
-</blockquote>
+</code></pre></div></div>
 
 <p>아이들의 공감을 어떻게든 얻어보고자, “몬스터 10마리를 잡고 딱 한 번만 레벨업을 시켜주는 게임이면 너무 재미없잖아요~” 하며 농담을 해 봤는데 재밌어했을지는 모르겠지만 반응을 얻어내는 데는 성공했다. 사실 좀 더 욕심을 내면 반복문 안에 함수 실행을 넣어볼 수도 있었을텐데 일단은 여기까지 하는데서 만족했다. 그래도 오늘 아이들이 개념을 잘 이해하고 열심히 따라와주는 것이 눈에 보여서 정말 고맙고 뿌듯했다. 매일 수업이 끝날 때마다 “오늘도 열심히 수업해주셔서 감사합니다” 하고 인사하고 가는 친구가 있다고 해서 더욱 고마운 하루였다 🥰</p>
 
@@ -461,6 +465,10 @@ play()
 
 	
 	<li class="nav-link"><a href="/typography/">Typography</a>
+	
+
+	
+
 	
 
 	

@@ -101,6 +101,14 @@
 <lastmod>2021-07-23T18:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/experience/2021/07/25/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-5.html</loc>
+<lastmod>2021-07-25T19:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/til/2021/07/28/TIL-C++-Study-Day-2.html</loc>
+<lastmod>2021-07-28T18:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -128,6 +136,9 @@
 <loc>http://localhost:4000/tag/kernel/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/tag/c/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/category/experience/</loc>
 </url>
 <url>
@@ -144,5 +155,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page/5/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page/6/</loc>
 </url>
 </urlset>
