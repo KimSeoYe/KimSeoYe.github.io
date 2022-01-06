@@ -8,7 +8,7 @@ tags:   TIL
 cover:  "/assets/headers/hgu1.jpeg"
 ---
 
-# [논문 읽기] Improving Configurability of Unit-level Continuous Fuzzing : An Industrial Case Study with SAP HANA
+# Improving Configurability of Unit-level Continuous Fuzzing : An Industrial Case Study with SAP HANA
 
 > 논문 전문 : https://hongshin.github.io/pubs/ase21-industry.pdf 
 
