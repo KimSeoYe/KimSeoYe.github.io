@@ -3,8 +3,8 @@ layout: post
 title:  "[논문 읽기] ase21-industry"
 date:   2022-01-06 15:00:00
 author: KimSeoYe
-categories: TIL
-tags:   TIL
+categories: STUDY
+tags:   STUDY
 cover:  "/assets/headers/hgu1.jpeg"
 ---
 
