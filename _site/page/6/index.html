@@ -11,7 +11,7 @@
 ">
   
   <meta name="author" content="KimSeoYe">
-  <meta name="copyright" content="&copy; KimSeoYe 2021">
+  <meta name="copyright" content="&copy; KimSeoYe 2022">
   
 
   <!-- External libraries -->
@@ -141,6 +141,16 @@
 
 	
 
+	
+
+	
+
+	
+
+	
+
+	
+
 
       </ul>
     </nav>
@@ -165,21 +175,17 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/experience/2021/06/26/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-1.html">[Experience] 2021 하계 SW 교육 봉사단 - Day 1</a>
+      <a class="post-link" href="/til/2021/07/08/TIL-System-Programming-Study-Day-9.html">[TIL] System Programming Study - Day 9</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>Hello, Python!
-
-연일초등학교에서의 첫번째 수업
-
-</p>
+      <p>Start implementing dsh: Distributed Shell Description 전에 만들었던 채팅 서버를 이용하여 distributed shell을 구현한다. 서버(dsh)에서 원하는 terminal을 골라 명령어를 보내면 해당 terminal에서 명령을 실행하고 그 결과를 dsh로 전송한다. TIL dup2 int dup2(int oldfd, int newfd); newfd가 oldfd와 같은 open file descriptor를 참조하도록 adjust된다. 즉, oldfd가 newfd에 덮어씌워진다. 실행에 성공할 경우...</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">June 26, 2021</div>
+      <div class="post-date">July 8, 2021</div>
       <div class="post-categories">
       in 
         
-        <a href="/category/Experience">Experience</a>
+        <a href="/category/TIL">Til</a>
         
       
       </div>
@@ -191,13 +197,79 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/experience/2021/06/09/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-OT.html">[Experience] 2021 하계 SW 교육 봉사단 - OT</a>
+      <a class="post-link" href="/til/2021/07/07/TIL-System-Programming-Study-Day-8.html">[TIL] System Programming Study - Day 8</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>SW 교육 봉사단을 준비하는 마음 이번 방학 중 한동대학교의 SW 교육 봉사단 활동에 참여하게 되었다. SW 교육 봉사단은 포항시의 초/중/고등학교를 방문하여 학생들을 대상으로 하는 코딩 교육(파이썬, 스크래치, 아두이노, 엔트리 등)을 진행하는 활동으로, 나는 6/26 ~ 7/24 5주 동안 연일초등학교에서 5학년, 6학년 학생 약 17명 정도를 대상으로 파이썬 교육을 진행하게 되었다....</p>
+      <p>fshare 2.0 - Simple File Sharing System Description &amp; Questions 클라이언트의 디렉토리는 모두 비어있다고 가정한다. 서버와 클라이언트 모두 파일 이름과 버전에 대한 메타데이터를 담은 linked list(+ hidden file)을 가지고 있다. (+) 처음 서버를 실행시켰을 때, 서버가 관리하는 디렉토리에 이미 존재하는 파일들이 있었을 경우에 대한 해결 방법이 필요하다. (+) 서버나 클라이언트...</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">June 9, 2021</div>
+      <div class="post-date">July 7, 2021</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/category/TIL">Til</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/til/2021/07/06/TIL-System-Programming-Study-Day-7.html">[TIL] System Programming Study - Day 7</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p>fshare 2.0 Description 서버와 클라이언트의 디렉토리는 모두 비어있다고 가정한다. 서버와 클라이언트 모두 파일 이름과 버전에 대한 메타데이터를 담은 linked list(+ hidden file)을 가지고 있다. 클라이언트쪽 디렉토리에 새로운 파일이 생길 경우 자동으로 서버에 put 한다. (using inotify()) 서버는 파일을 받아 버전 정보를 업데이트한 뒤, 해당 클라이언트에게 버전 넘버를 알려준다. 클라이언트는 서버로부터...</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">July 6, 2021</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/category/TIL">Til</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/til/2021/07/05/TIL-System-Programming-Study-Day-6.html">[TIL] System Programming Study - Day 6</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p>Simple Chatting Program TIL setsocketopt()를 사용하여 non-blocking I/O를 구현할 수 있다. int option = 1 ; setsockopt(new_socket, SOL_TCP, TCP_NODELAY, &amp;option, sizeof(option)) ; option을 1로 주는 것은 Nagle 알고리즘(가능하면 조금씩 자주 보내지 말고 한번에 많이 보낸다)을 off 한다는 의미이다. (0일 경우 Nagle 알고리즘 on -&gt; Default) TCP_NODELAY로 socket의 옵션을 설정하면 write...</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">July 5, 2021</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/category/TIL">Til</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/experience/2021/07/03/Experience-2021-%ED%95%98%EA%B3%84-SW-%EA%B5%90%EC%9C%A1-%EB%B4%89%EC%82%AC%EB%8B%A8-Day-2.html">[Experience] 2021 하계 SW 교육 봉사단 - Day 2</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p>Hello, Python! 연일초등학교에서의 두번째 수업 이번주는 처음으로 주 강사로서 강의를 하게 되었다. 쉬는시간을 기준으로 앞 타임 강의를 맡아, 지난 주 내용의 복습과 더 자세한 설명, 예제를 활용한 간단한 조건문의 이해, Turtle 실습을 위한 간단한 for문 예제 소개를 맡았다. 변수와 자료형 지난주 강의를 진행할 때도 변수와 자료형의 개념을 어떻게 쉽게 설명할...</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">July 3, 2021</div>
       <div class="post-categories">
       in 
         
@@ -215,7 +287,7 @@
 	<p>
     
 			
-			<a class="newer-posts" href="">
+			<a class="newer-posts" href="/page/7/">
 				<span class="fa-stack fa-lg">
 					<i class="fa fa-square fa-stack-2x"></i>
 					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
@@ -223,12 +295,14 @@
 			</a>
 			
 		
-		<span class="page-number">Page 6 of 6</span>
+		<span class="page-number">Page 6 of 8</span>
 		
-		<span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-    </span>
+		<a class="newer-posts" href="/page/7/">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
 		
 	</p>
 </nav>
@@ -265,6 +339,16 @@
 
 	
 	<li class="nav-link"><a href="/typography/">Typography</a>
+	
+
+	
+
+	
+
+	
+
+	
+
 	
 
 	

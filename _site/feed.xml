@@ -6,9 +6,142 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Jul 2021 21:22:40 +0900</pubDate>
-    <lastBuildDate>Wed, 28 Jul 2021 21:22:40 +0900</lastBuildDate>
+    <pubDate>Thu, 06 Jan 2022 15:51:09 +0900</pubDate>
+    <lastBuildDate>Thu, 06 Jan 2022 15:51:09 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[TIL] 21-2 Week7 TIL</title>
+        <description>&lt;h2 id=&quot;211011mon&quot;&gt;21.10.11.Mon&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[Web] CSS animation과 transition, transform을 이용할 수 있게 되었다.&lt;/li&gt;
+  &lt;li&gt;[PLT] 1st class function의 개념을 알고 Racket을 이용해 구현하기 시작하였다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 11 Oct 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/10/11/TIL-Week7-TIL.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/10/11/TIL-Week7-TIL.html</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] 21-2 Week3 TIL</title>
+        <description>&lt;h2 id=&quot;210913mon&quot;&gt;21.09.13.Mon&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Circuit switching과 Packet switching의 차이와 장단점에 대해 공부했다.&lt;/li&gt; &lt;li&gt;Circuit switching에서의 multiplexing에 대해 공부했다.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;210914tue&quot;&gt;21.09.14.Tue&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Multiple source program을 fuzzing할 수 있는 구조를 구현했다.&lt;/li&gt; &lt;/ul&gt; &lt;h2...</description>
+        <pubDate>Sun, 12 Sep 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/09/12/TIL-21-2-Week3-TIL.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/09/12/TIL-21-2-Week3-TIL.html</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>21-2 학기 목표 쓰기</title>
+        <description>&lt;h1 id=&quot;2021-2&quot;&gt;2021-2&lt;/h1&gt; &lt;p&gt;먼저 이번 학기의 가장 큰 목표를 한 문장으로 표현하자면, &lt;strong&gt;버텨내는 학기가 아닌 살아내는 학기를 살자&lt;/strong&gt; 이다. 하루하루를 간신히 버텨내는 것이 아닌, 내가 계획한 대로, 의도한 방향대로, 차근차근 실행하며...</description>
+        <pubDate>Mon, 06 Sep 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/objects/2021/09/06/21-2-%E1%84%92%E1%85%A1%E1%86%A8%E1%84%80%E1%85%B5-%E1%84%86%E1%85%A9%E1%86%A8%E1%84%91%E1%85%AD-%E1%84%8A%E1%85%B3%E1%84%80%E1%85%B5.html</link>
+        <guid isPermaLink="true">http://localhost:4000/objects/2021/09/06/21-2-%E1%84%92%E1%85%A1%E1%86%A8%E1%84%80%E1%85%B5-%E1%84%86%E1%85%A9%E1%86%A8%E1%84%91%E1%85%AD-%E1%84%8A%E1%85%B3%E1%84%80%E1%85%B5.html</guid>
+        
+        <category>objects</category>
+        
+        <category>2021-fall</category>
+        
+        
+        <category>OBJECTS</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] 21-2 Week2 TIL</title>
+        <description>&lt;h2 id=&quot;210906mon&quot;&gt;21.09.06.Mon&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Q&amp;amp;A class를 통해 Racket 언어에 대해 조금 더 자세히 이해하였다.&lt;/li&gt; &lt;li&gt;Compiler와 Interpreter의 차이를 이해하였다.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;210907tue&quot;&gt;21.09.07.Tue&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Project management와 Product management의 차이를 알게 되었다.&lt;/li&gt; &lt;/ul&gt; &lt;h2...</description>
+        <pubDate>Sun, 05 Sep 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/09/05/TIL-21-2-Week2-TIL.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/09/05/TIL-21-2-Week2-TIL.html</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] 21-2 Week1 TIL</title>
+        <description>&lt;h2 id=&quot;210830mon&quot;&gt;21.08.30.Mon&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;네트워크, 인터넷, 프로토콜이란 무엇인지에 대해 간단한 개요를 공부했다.&lt;/li&gt; &lt;li&gt;자연어와 프로그래밍 언어를 비교하며, 프로그래밍 언어의 필요성과 특성에 대해 생각해 보았다.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;210831tue&quot;&gt;21.08.31.Tue&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Racket의 기본적인 문법을 공부했다.&lt;/li&gt;...</description>
+        <pubDate>Mon, 30 Aug 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/08/30/TIL-21-2-Week1-TIL.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/08/30/TIL-21-2-Week1-TIL.html</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] 8월 4주 TIL</title>
+        <description>&lt;h2 id=&quot;210823mon&quot;&gt;21.08.23.Mon&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;gcov의 -b 옵션을 이용하여 branch coverage를 구하는 부분을 fuzzer에 추가했다.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;210824tue&quot;&gt;21.08.24.Tue&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;regcomp&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;regexec&lt;/code&gt;을 사용하여 정규표현식을 이용한 간단한 url parser를 구현해 보았다.&lt;/li&gt; &lt;/ul&gt;...</description>
+        <pubDate>Sun, 22 Aug 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/08/22/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-4%E1%84%8C%E1%85%AE-TIL.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/08/22/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-4%E1%84%8C%E1%85%AE-TIL.html</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] 8월 3주 TIL</title>
+        <description>&lt;h2 id=&quot;210816mon&quot;&gt;21.08.16.Mon&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;초기 &lt;code class=&quot;highlighter-rouge&quot;&gt;troff&lt;/code&gt;가 가지고 있던 bug situation들을 간단하게 구현하여 random fuzzer로 테스트해 보았다.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;210817tue&quot;&gt;21.08.17.Tue&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;random fuzzer를 사용하여 &lt;a href=&quot;https://github.com/hunspell/hunspell.git&quot;&gt;hunspell&lt;/a&gt;을 테스트해 보았다.&lt;/li&gt; &lt;li&gt;Black-Box testing과 White-Box...</description>
+        <pubDate>Sun, 15 Aug 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/08/15/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-3%E1%84%8C%E1%85%AE-TIL.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/08/15/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-3%E1%84%8C%E1%85%AE-TIL.html</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] 8월 2주 TIL</title>
+        <description>&lt;h2 id=&quot;210809mon&quot;&gt;21.08.09.Mon&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Linked list로 구현된 프로그램을 대상으로 Program specific checker를 만들어 보았다.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;210810tue&quot;&gt;21.08.10.Tue&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;C에서 Object Oriented Design을 구현하는 방법을 고민해 보았다.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;210811wed&quot;&gt;21.08.11.Wed&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;struct와...</description>
+        <pubDate>Mon, 09 Aug 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/08/09/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-2%E1%84%8C%E1%85%AE-TIL.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/08/09/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-2%E1%84%8C%E1%85%AE-TIL.html</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>[TIL] 8월 1주 TIL</title>
+        <description>&lt;h2 id=&quot;210802mon&quot;&gt;21.08.02.Mon&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;https://www.fuzzingbook.org/html/Intro_Testing.html&quot;&gt;The Fuzzing Book&lt;/a&gt; 공부를 시작했다.&lt;/li&gt; &lt;li&gt;아주 간단한 fuzzer를 이용하여 랜덤한 string input을 만들어 보았다.&lt;/li&gt; &lt;li&gt;간단한 Manual test와 fuzzer를 이용한 Random test를 해 보았다.&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;210803tue&quot;&gt;21.08.03.Tue&lt;/h2&gt;...</description>
+        <pubDate>Mon, 02 Aug 2021 18:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/2021/08/02/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-1%E1%84%8C%E1%85%AE-TIL.html</link>
+        <guid isPermaLink="true">http://localhost:4000/til/2021/08/02/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-1%E1%84%8C%E1%85%AE-TIL.html</guid>
+        
+        <category>TIL</category>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>[TIL] C++ Study - Day 2</title>
@@ -20,160 +153,6 @@
         <category>TIL</category>
         
         <category>c++</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[Experience] 2021 하계 SW 교육 봉사단 - Day 5</title>
-        <description>&lt;h1 id=&quot;hello-python&quot;&gt;Hello, Python!&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;연일초등학교에서의-마지막-수업&quot;&gt;연일초등학교에서의 마지막 수업&lt;/h3&gt; &lt;p&gt;봉사를 시작한 지 얼마 되지 않은 것 같은데 어느새 5주가 지나고 마지막 수업이 끝났다. 처음을 돌아보면 긴장도 많이 했고 아이들에게 잘...</description>
-        <pubDate>Sun, 25 Jul 2021 19:00:00 +0900</pubDate>
-        <link>http://localhost:4000/experience/2021/07/25/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-5.html</link>
-        <guid isPermaLink="true">http://localhost:4000/experience/2021/07/25/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-5.html</guid>
-        
-        <category>SW-education</category>
-        
-        
-        <category>Experience</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] xv6 Study - Day 10</title>
-        <description>&lt;h1 id=&quot;lab-3-memory-management&quot;&gt;Lab 3. Memory Management&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;Stack overflow로 인한 page fault가 일어나면 stack을 한 페이지씩 grow할 수 있도록 수정해 보았다. &lt;ul&gt; &lt;li&gt;Trap을 handling하는 코드에 page fault의 case를 추가했다.&lt;/li&gt; &lt;li&gt;Stack overflow로...</description>
-        <pubDate>Fri, 23 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/23/TIL-xv6-Study-Day-10.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/23/TIL-xv6-Study-Day-10.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>xv6</category>
-        
-        <category>kernel</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] xv6 Study - Day 9</title>
-        <description>&lt;h1 id=&quot;lab-3-memory-management&quot;&gt;Lab 3. Memory Management&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;xv6의 user memory layout을 바꿔보았다. &lt;ul&gt; &lt;li&gt;Original Layout : code &amp;amp; data와 heap 사이에 1 page size의 stack이 있다 (grow backword)&lt;/li&gt; &lt;li&gt;Modified Layout :...</description>
-        <pubDate>Thu, 22 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/22/TIL-xv6-Study-Day-9.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/22/TIL-xv6-Study-Day-9.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>xv6</category>
-        
-        <category>kernel</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] xv6 Study - Day 8</title>
-        <description>&lt;h1 id=&quot;lab-2-scheduling&quot;&gt;Lab 2. Scheduling&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;process의 priority를 수정하거나 가져올 수 있는 system call을 추가했다. &lt;ul&gt; &lt;li&gt;모든 팀원들의 test case에서 동작할 수 있도록 하기 위해 api를 통일하였다. &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int...</description>
-        <pubDate>Wed, 21 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/21/TIL-xv6-Study-Day-8.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/21/TIL-xv6-Study-Day-8.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>xv6</category>
-        
-        <category>kernel</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] xv6 Study - Day 7</title>
-        <description>&lt;h1 id=&quot;lab-2-scheduling&quot;&gt;Lab 2. Scheduling&lt;/h1&gt; &lt;p&gt;&lt;strong&gt;Goals:&lt;/strong&gt; Understand how the scheduler works. Understand how to implement a scheduling policy and characterize its impact on performance. Understand priority inversion and a possible solution...</description>
-        <pubDate>Tue, 20 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/20/TIL-xv6-Study-Day-7.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/20/TIL-xv6-Study-Day-7.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>xv6</category>
-        
-        <category>kernel</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] xv6 Study - Day 6</title>
-        <description>&lt;h1 id=&quot;lab-1-system-calls&quot;&gt;Lab 1. System Calls&lt;/h1&gt; &lt;h3 id=&quot;example-w-wait-system-call&quot;&gt;Example w/ &lt;code class=&quot;highlighter-rouge&quot;&gt;wait()&lt;/code&gt; system call&lt;/h3&gt; &lt;ol&gt; &lt;li&gt;User program : call &lt;code class=&quot;highlighter-rouge&quot;&gt;wait()&lt;/code&gt;&lt;/li&gt; &lt;li&gt;trapasm.S : build trap frame (stack switch) &amp;amp; call &lt;code class=&quot;highlighter-rouge&quot;&gt;trap()&lt;/code&gt;&lt;/li&gt;...</description>
-        <pubDate>Mon, 19 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/19/TIL-xv6-Study-Day-6.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/19/TIL-xv6-Study-Day-6.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>xv6</category>
-        
-        <category>kernel</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[Experience] 2021 하계 SW 교육 봉사단 - Day 4</title>
-        <description>&lt;h1 id=&quot;hello-python&quot;&gt;Hello, Python!&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;연일초등학교에서의-네번째-수업&quot;&gt;연일초등학교에서의 네번째 수업&lt;/h3&gt; &lt;p&gt;지지난주와 마찬가지로 이번주는 내가 첫 타임 강사를 맡게 되었다. if/elif/else와 for문 복습, 반복문 while, 그리고 함수까지 설명하기로 했는데, 다루는 내용이 많기도...</description>
-        <pubDate>Sat, 17 Jul 2021 21:30:00 +0900</pubDate>
-        <link>http://localhost:4000/experience/2021/07/17/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-4.html</link>
-        <guid isPermaLink="true">http://localhost:4000/experience/2021/07/17/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-4.html</guid>
-        
-        <category>SW-education</category>
-        
-        
-        <category>Experience</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] xv6 Study - Day 5</title>
-        <description>&lt;h1 id=&quot;lab-1-system-calls&quot;&gt;Lab 1. System Calls&lt;/h1&gt; &lt;h3 id=&quot;code--assembly-trap-handlers-textbook-p42&quot;&gt;Code : Assembly trap handlers (textbook p.42)&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;int : processor가 trap을 발생시키도록 하는 instruction (x86에는 256개의 interrupt가 있다.)&lt;/li&gt; &lt;li&gt;xv6는 trap이 일어났을 때 x86...</description>
-        <pubDate>Fri, 16 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/16/TIL-xv6-Study-Day-5.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/16/TIL-xv6-Study-Day-5.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>xv6</category>
-        
-        <category>kernel</category>
-        
-        
-        <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>[TIL] xv6 Study - Day 4</title>
-        <description>&lt;h1 id=&quot;lab-1-system-calls&quot;&gt;Lab 1. System Calls&lt;/h1&gt; &lt;h3 id=&quot;deeper-understanding---execption-and-system-call&quot;&gt;Deeper Understanding - execption and system call&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;xv6 커널에 event가 일어나면 HW가 kernel mode로 전환하여 trap을 처리하도록 한다.&lt;/li&gt; &lt;li&gt;trap frame : user stack을...</description>
-        <pubDate>Thu, 15 Jul 2021 18:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/2021/07/15/TIL-xv6-Study-Day-4.html</link>
-        <guid isPermaLink="true">http://localhost:4000/til/2021/07/15/TIL-xv6-Study-Day-4.html</guid>
-        
-        <category>TIL</category>
-        
-        <category>xv6</category>
-        
-        <category>kernel</category>
         
         
         <category>TIL</category>

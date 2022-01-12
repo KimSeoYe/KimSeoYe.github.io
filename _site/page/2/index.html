@@ -11,7 +11,7 @@
 ">
   
   <meta name="author" content="KimSeoYe">
-  <meta name="copyright" content="&copy; KimSeoYe 2021">
+  <meta name="copyright" content="&copy; KimSeoYe 2022">
   
 
   <!-- External libraries -->
@@ -141,6 +141,16 @@
 
 	
 
+	
+
+	
+
+	
+
+	
+
+	
+
 
       </ul>
     </nav>
@@ -165,13 +175,27 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/til/2021/07/20/TIL-xv6-Study-Day-7.html">[TIL] xv6 Study - Day 7</a>
+      <a class="post-link" href="/til/2021/08/22/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-4%E1%84%8C%E1%85%AE-TIL.html">[TIL] 8월 4주 TIL</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>Lab 2. Scheduling Goals: Understand how the scheduler works. Understand how to implement a scheduling policy and characterize its impact on performance. Understand priority inversion and a possible solution for it. System Call setpriority() system call을 추가하기 위해서, proc.c에 setpriority(int pid, int val)를 implement한다. defs.h에 setpriority의 정의를 추가한다. sysproc.c에 handler...</p>
+      <p>21.08.23.Mon
+
+  gcov의 -b 옵션을 이용하여 branch coverage를 구하는 부분을 fuzzer에 추가했다.
+
+
+21.08.24.Tue
+
+  regcomp, regexec을 사용하여 정규표현식을 이용한 간단한 url parser를 구현해 보았다.
+
+
+21.08.25.Wed
+
+  기존에 구현했던 fuzzing architecture에 mutation-based fuzzer를 추가했다.
+
+</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">July 20, 2021</div>
+      <div class="post-date">August 22, 2021</div>
       <div class="post-categories">
       in 
         
@@ -187,13 +211,13 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/til/2021/07/19/TIL-xv6-Study-Day-6.html">[TIL] xv6 Study - Day 6</a>
+      <a class="post-link" href="/til/2021/08/15/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-3%E1%84%8C%E1%85%AE-TIL.html">[TIL] 8월 3주 TIL</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>Lab 1. System Calls Example w/ wait() system call User program : call wait() trapasm.S : build trap frame (stack switch) &amp; call trap() trap.c : trap frame에 저장된 trap number가 T_SYSCALL이면 call syscall() syscall.c : syscall table에서 tf-&gt;eax에 저장된 SYS_wait을 index로 사용하여 system call handler function인 sys_wait()을 부른다 sys_wait...</p>
+      <p>21.08.16.Mon 초기 troff가 가지고 있던 bug situation들을 간단하게 구현하여 random fuzzer로 테스트해 보았다. 21.08.17.Tue random fuzzer를 사용하여 hunspell을 테스트해 보았다. Black-Box testing과 White-Box testing의 차이를 알게 되었다. 21.08.18.Wed gcov를 사용해 code coverage(line coverage)를 확인해 보았다. gcov 파일을 읽어 코드의 실행된 라인 번호를 저장하는 코드를 작성해 보았다. 21.08.19.Thu gcov를 사용해 code...</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">July 19, 2021</div>
+      <div class="post-date">August 15, 2021</div>
       <div class="post-categories">
       in 
         
@@ -209,35 +233,33 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/experience/2021/07/17/Experience-2021-%E1%84%92%E1%85%A1%E1%84%80%E1%85%A8-SW-%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8-%E1%84%87%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%83%E1%85%A1%E1%86%AB-Day-4.html">[Experience] 2021 하계 SW 교육 봉사단 - Day 4</a>
+      <a class="post-link" href="/til/2021/08/09/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-2%E1%84%8C%E1%85%AE-TIL.html">[TIL] 8월 2주 TIL</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>Hello, Python! 연일초등학교에서의 네번째 수업 지지난주와 마찬가지로 이번주는 내가 첫 타임 강사를 맡게 되었다. if/elif/else와 for문 복습, 반복문 while, 그리고 함수까지 설명하기로 했는데, 다루는 내용이 많기도 하고 지난주에 아이들이 내용 이해를 조금 어려워했던 것 같아서 최대한 아이들의 눈높이에 맞게, 그리고 재밌게 개념을 설명하기 위해 노력해 보았다. 간단한 반복문 - while...</p>
+      <p>21.08.09.Mon
+
+  Linked list로 구현된 프로그램을 대상으로 Program specific checker를 만들어 보았다.
+
+
+21.08.10.Tue
+
+  C에서 Object Oriented Design을 구현하는 방법을 고민해 보았다.
+
+
+21.08.11.Wed
+
+  struct와 function pointer를 사용하여 Object를 구현해 보았다.
+  Test driver와 Fuzzer의 기본적인 구조를 고민해 보았다.
+
+
+21.08.13.Fri
+
+  generic한 fuzzer를 구현하였다.
+
+</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">July 17, 2021</div>
-      <div class="post-categories">
-      in 
-        
-        <a href="/category/Experience">Experience</a>
-        
-      
-      </div>
-    </section>
-  </li>
-  
-  <hr>
-  
-  
-  <li>
-    <h2>
-      <a class="post-link" href="/til/2021/07/16/TIL-xv6-Study-Day-5.html">[TIL] xv6 Study - Day 5</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>Lab 1. System Calls Code : Assembly trap handlers (textbook p.42) int : processor가 trap을 발생시키도록 하는 instruction (x86에는 256개의 interrupt가 있다.) xv6는 trap이 일어났을 때 x86 하드웨어가 stack switch를 하도록 한다. 하드웨어가 stack segment selector와 new value for esp(esp가 이제 어디를 point해야 하는지)를 load한다. switchuvm : user process의 kernel...</p>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">July 16, 2021</div>
+      <div class="post-date">August 9, 2021</div>
       <div class="post-categories">
       in 
         
@@ -253,13 +275,35 @@
   
   <li>
     <h2>
-      <a class="post-link" href="/til/2021/07/15/TIL-xv6-Study-Day-4.html">[TIL] xv6 Study - Day 4</a>
+      <a class="post-link" href="/til/2021/08/02/TIL-8%E1%84%8B%E1%85%AF%E1%86%AF-1%E1%84%8C%E1%85%AE-TIL.html">[TIL] 8월 1주 TIL</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>Lab 1. System Calls Deeper Understanding - execption and system call xv6 커널에 event가 일어나면 HW가 kernel mode로 전환하여 trap을 처리하도록 한다. trap frame : user stack을 가리키는 pointer 등 중요한 argument들을 trap handler에게 넘겨주기 위해 사용되는 data structure이다. syscall syscall() : 모든 system call들에 대한 top level handler. trap...</p>
+      <p>21.08.02.Mon The Fuzzing Book 공부를 시작했다. 아주 간단한 fuzzer를 이용하여 랜덤한 string input을 만들어 보았다. 간단한 Manual test와 fuzzer를 이용한 Random test를 해 보았다. 21.08.03.Tue Fuzzer를 통해 발견된 bug들의 예시를 간단하게 시뮬레이션해 보았다. 21.08.04 Wed Fuzzer와 fork, pipe, exec을 사용하여 external program을 test해 보았다. 21.08.05 Thu pipe에 대한 이해가 부족해...</p>
     </section>
     <section class="post-meta">
-      <div class="post-date">July 15, 2021</div>
+      <div class="post-date">August 2, 2021</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/category/TIL">Til</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/til/2021/07/28/TIL-C++-Study-Day-2.html">[TIL] C++ Study - Day 2</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p>Chapter 3. Reference Types C++ 의 references (using &amp;)에 대해 공부했다. const 키워드에 대해 공부했다. 함수의 argument를 const로 선언하면 함수의 scope 내에서 해당 argument의 수정을 막는다. method를 const로 선언하는 것은 해당 method 내에서 current object의 state를 수정하지 않는다는 의미이다. object의 member variable을 const로 선언하면, 해당 멤버 변수는 initialization 이후에는 수정할...</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">July 28, 2021</div>
       <div class="post-categories">
       in 
         
@@ -285,7 +329,7 @@
       </a>
 			
 		
-		<span class="page-number">Page 2 of 6</span>
+		<span class="page-number">Page 2 of 8</span>
 		
 		<a class="newer-posts" href="/page/3/">
       <span class="fa-stack fa-lg">
@@ -329,6 +373,16 @@
 
 	
 	<li class="nav-link"><a href="/typography/">Typography</a>
+	
+
+	
+
+	
+
+	
+
+	
+
 	
 
 	
