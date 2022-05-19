@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[TIL] GitHub Action"
-date:   2022-01-06 09:00:00
+date:   2022-05-19 09:00:00
 author: KimSeoYe
 categories: TIL
 tags:   TIL
