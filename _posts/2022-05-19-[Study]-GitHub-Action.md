@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "[TIL] GitHub Action"
+title:  "[Study] GitHub Action"
 date:   2022-05-19 09:00:00
 author: KimSeoYe
-categories: TIL
-tags:   TIL
+categories: Study
+tags:   Study
 cover:  "/assets/headers/hgu1.jpeg"
 ---
 

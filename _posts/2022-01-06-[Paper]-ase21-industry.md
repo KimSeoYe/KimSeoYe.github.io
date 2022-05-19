@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "[논문 읽기] ase21-industry"
+title:  "[Paper] ase21-industry"
 date:   2022-01-06 15:00:00
 author: KimSeoYe
-categories: STUDY
-tags:   STUDY
+categories: Study
+tags:   Study
 cover:  "/assets/headers/hgu1.jpeg"
 ---
 
