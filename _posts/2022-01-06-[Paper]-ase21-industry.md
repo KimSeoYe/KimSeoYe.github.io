@@ -3,8 +3,8 @@ layout: post
 title:  "[Paper] ase21-industry"
 date:   2022-01-06 15:00:00
 author: KimSeoYe
-categories: Study
-tags:   Study
+categories: Paper
+tags:   Study Paper
 cover:  "/assets/headers/hgu1.jpeg"
 ---
 

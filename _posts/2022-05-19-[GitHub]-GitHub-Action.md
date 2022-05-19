@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "[Study] GitHub Action"
+title:  "[GitHub] GitHub Action"
 date:   2022-05-19 09:00:00
 author: KimSeoYe
-categories: Study
-tags:   Study
+categories: Git
+tags:   Git GitHub
 cover:  "/assets/headers/hgu1.jpeg"
 ---
 
