@@ -1,213 +1,219 @@
-# External plugins
-# See http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html for making `jekyll archives` work.
-plugins:
-  - jekyll-archives # Sorry, not GitHub pages friendly!
-  - jekyll-sitemap
-  # - jekyll-paginate-v2
-  - jekyll-paginate
-
-exclude:
-  - "/vendor/"
-
+# Welcome to Jekyll!
+#
+# About Theme
+#
+# Yet another theme for elegant writers with modern flat style and beautiful
+# night/dark mode.
+#
+# Website: https://github.com/jeffreytse/jekyll-theme-yat
+#
+# You can do anything you want, including projects for your clients, as long
+# as you mention an attribution back (credit links in footer or project).
+# See the LICENCE file.
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you
+# use 'bundle exec jekyll serve'. If you change this file, please restart
+# the server process.
+#
 # Site settings
-title: DevLog
-subtitle: Seo-ye's growth records:)
-email: kimseoye15@gmail.com
-name: KimSeoYe
-description: >
-  Seo-ye's growth records:)
-# Base URL of site (i.e. /blog). It should always start with a slash,
-# and never end with a slash. Set it to a blank value if hosting at the
-# root of your server.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: https://kimseoye.github.io # the base hostname & protocol for your site
-cover: "/assets/header_image.jpeg"
-logo: "/assets/logo.png"
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
-# Build settings
-markdown: kramdown
-inter_post_navigation: false
-highlightjs_theme: "monokai-sublime"
+title: Your awesome title
+email: your-email@domain.com
+author: GitHub User
 
-# Pagination Settings
-# https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
-# pagination:
-#   enabled: true
-#   per_page: 5
-#   permalink: "/page/:num/"
-#   sort_reverse: true
-paginate: 5
-paginate_path: "/page/:num/"
+# Copyright setting
+# You can use any html code, currently below placeholders are available:
+# * current year: {currentYear}
+# * author: {author} (Value is the same as site.author)
+# * copyright: (c) - ©
+# * copyleft: (cleft)
+# * sound recording copyright: (p) - ℗
+#
+# For example:
+#   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
+#   "Copyright © 2017-2021 Foobar"
+#
+copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
 
-# Archive settings (see https://github.com/jekyll/jekyll-archives/)
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layout: 'archive'
-  permalinks:
-    category: '/category/:name/'
-    tag: '/tag/:name/'
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 
-# Disqus comments
-# disqus_shortname: bencentra
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. https://example.com
+favicon: "" # the favicon for your site
+
+# Yat date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+yat:
+  date_format: "%b %d, %Y"
+
+# If you want more debug log, you can set true
+# debug: false
+
+# If you don't want transparent header, you can set false
+# header_transparent: true
+
+# If you want to change the content width, you can set to another value
+# content_width: "920px"
 
 # Google analytics
-# ga_tracking_id: "UA-XXXX-1"
+# google_analytics: [Tracking ID]
 
-# Category descriptions (for archive pages)
-descriptions:
-  - cat: jekyll
-    desc: "Posts describing Jekyll setup techniques."
+# If you want to generate website sitemap, you can set true
+# sitemap: false
 
-  - cat: dummy
-    desc: "Just some placeholder posts, lorem ipsum and the rest."
+# If you want to change site language, you can set lang option
+# lang: "en"  # default lang is en
 
-  # - cat: TIL
-  #   desc: "Today I Learned."
-
-  # - cat: Experience
-  #   desc: "Things that are valuable."
-
-# Social icons and sharing options
+# Translate languges
+# langs refer to https://cloud.google.com/translate/docs/languages
+# translate_langs:
+#   - lang: en
+#     img: https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png
+#     text: English
 #
-# Social settings are used in two places:
-# * In the footer, as links to your personal profiles
-# * After each blog post for sharing widgets
+#   - lang: fr
+#     img: https://cdn.countryflags.com/thumbs/france/flag-400.png
+#     text: French
 #
-# Example:
+#   - lang: zh-CN
+#     img: https://cdn.countryflags.com/thumbs/china/flag-400.png
+#     text: Chinese(Simple)
 #
-# social:
-#   - name: Twitter                         # Name of the service
-#     icon: twitter                         # Font Awesome icon to use (minus fa- prefix)
-#     username: "@TheBenCentra"             # (User) Name to display in the footer link
-#     url: https://twitter.com/TheBenCentra # URL of your profile (leave blank to not display in footer)
-#     desc: Follow me on Twitter            # Description to display as link title, etc
-#     share: true                           # Include in the "Share" section of posts
-social:
-  - name: Twitter
-    icon: twitter
-    username: ""
-    url: ""
-    desc: Follow me on Twitter
-    share: false
+#   - lang: ja
+#     img: https://cdn.countryflags.com/thumbs/japan/flag-400.png
+#     text: Japanese
+#
+#   - lang: ko
+#     img: https://cdn.countryflags.com/thumbs/south-korea/flag-400.png
+#     text: Korean
+#
+#   - lang: ru
+#     img: https://cdn.countryflags.com/thumbs/russia/flag-400.png
+#     text: Russian
 
-  - name: Facebook
-    icon: facebook
-    username: ""
-    url: ""
-    desc: Friend me on Facebook
-    share: false
+# You can choose a theme color
+# Default theme colors as below:
+# coolblack: #090a0b
+# spacegrey: #353535
+# snowwhite: #ffffff
+#
+# theme_color: snowwhite
+#
+# Custom color as below:
+# theme_color: "#882250"
 
-  - name: GitHub
-    icon: github
-    username: KimSeoYe
-    url: https://github.com/KimSeoYe
-    desc: Fork me on GitHub
-    share: true
+# You can choose a brand color
+# Default brand colors as below:
+# orangered: #ff5100
+# greatgold: #f2cb05
+# greenblue: #389092
+#
+# brand_color: orangered
+#
+# Custom color as below:
+# brand_color: "#1a8e42"
 
-  - name: LinkedIn
-    icon: linkedin
-    username: ""
-    url: ""
-    desc: Connect with me on LinkedIn
-    share: false
+# Night/Dark mode
+# Default mode is "auto", "auto" is for auto nightshift
+# (19:00 - 07:00), "manual" is for manual toggle, and
+# "on/off" is for default on/off.
+#
+# Whatever the user's choice is, it will supersede the
+# default setting of the site and be kept during the
+# visit (session). Only the dark mode setting is"manual",
+# it will be always kept on every visit (i.e. no matter
+# the browser is closed or not)
+#
+# night_mode: "auto"
 
-  - name: Google+
-    icon: google-plus
-    username: ""
-    url: ""
-    desc: Add me to your Circles
-    share: false
+# Code badge setting
+# You can enable or disable the code badge and so on
+# code_badge:
+#   enabled: "true"
+#   color: "#fff"
+#   background_color: "#ff4e00"
+#   text_transform: "uppercase"  # ("uppercase", "lowercase", "capitalize")
 
-  - name: YouTube
-    icon: youtube
-    username: ""
-    url: ""
-    desc: Subscribe on YouTube
-    share: false
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+# header_pages:
+#   - index.html
+#   - archives.html
+#   - categories.html
+#   - tags.html
+#   - about.md
 
-  - name: Instagram
-    icon: instagram
-    username: sy_callykim
-    url: https://www.instagram.com/sy_callykim/
-    desc: Follow me on Instagram
-    share: true
+# Page default value
+# defaults:
+#   home:
+#     heading: "Your awesome heading"
+#     subheading: "Your awesome subheading"
+#     banner: "Your image url"
 
-  - name: Pinterest
-    icon: pinterest
-    username: ""
-    url: ""
-    desc: Follow me on Pinterest
-    share: false
+# Banner default settings
+# These banner settings are for global banner default, but you can also
+# config it by the front matter for one specific post
+# banner:
+#   video: null             # Video banner source
+#   loop: true              # Video loop
+#   volume: 0               # Video volume (100% is 1.0)
+#   start_at: 0             # Video start time
+#   image: null             # Image banner source
+#   opacity: 1.0            # Banner opacity (100% is 1.0)
+#   background: "rgba(0, 0, 0, 0.8)"  # Banner background (Could be a image)
+#   height: "640px"         # Banner default height
+#   min_height: null        # Banner minimum height
+#   heading_style: null     # Custom heading style (e.g. "font-weight: bold; text-decoration: underline")
+#   subheading_style: null  # Custom subheading style (e.g. color: gold)
 
-  - name: SoundCloud
-    icon: soundcloud
-    username: ""
-    url: ""
-    desc: Follow me on SoundCloud
-    share: false
+# Excerpt size setting
+# excerpt_size: 350
 
-  - name: Tumblr
-    icon: tumblr
-    username: ""
-    url: ""
-    desc: Follow me on Tumblr
-    share: false
+# Pagination setting
+# paginate: 5
 
-  - name: Steam
-    icon: steam
-    username: ""
-    url: ""
-    desc: Friend me on Steam
-    share: false
+# Disqus comments
+# disqus:
+#   shortname: "Your Disqus username"
 
-  - name: Dribbble
-    icon: dribbble
-    username: ""
-    url: ""
-    desc: Follow me on Dribble
-    share: false
+# Gitment comments
+# gitment:
+#   username: "Your GitHub username"
+#   repo: "The repo to store comments"
+#   client_id: "Your client ID"
+#   client_secret: "Your client secret"
+#   redirect_uri: "Your redirect url"   # If you use a custom domain name
 
-  - name: Vimeo
-    icon: vimeo-square
-    username: ""
-    url: ""
-    desc: Follow me on Vimeo
-    share: false
+# Utterances comments
+# See https://utteranc.es/
+# set follow_site_theme true to make utterances' theme follow the site's
 
-  - name: Vine
-    icon: vine
-    username: ""
-    url: ""
-    desc: Follow me on Vine
-    share: false
+# utterances:
+#   repo: "owner/repo"
+#   issue_term: "title"
+#   label: "utterances comment"
+#   theme: "github-light"
+#   follow_site_theme: true
 
-  - name: Reddit
-    icon: reddit
-    username: ""
-    url: ""
-    desc: Share to Reddit
-    share: false
+# Build settings
+# highlighter: none
+markdown: kramdown
+kmarkdown:
+  input: GFM
 
-  - name: "Hacker News"
-    icon: hacker-news
-    username: ""
-    url: ""
-    desc: Share to Hacker News
-    share: false
-    
-# Social sharing protocols
-# These are for automatically generating sharing metadata for FB and Twitter
-# OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
-protocols:
-    fb_image: "/assets/logo.png"
-    fb_image_width: 612
-    fb_image_height: 605
-    fb_image_type: "image/png"
-
-    twitter_image: "/assets/logo.png"
-
-    os_repo: "https://github.com/bencentra/centrarium.com"
-    os_rcs_type: "git"
-    os_src: "git@github.com:bencentra/centrarium.com.git"
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-spaceship
