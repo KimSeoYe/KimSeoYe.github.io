@@ -1,0 +1,36 @@
+---
+layout: post
+title: "[TIL] System Programming Study - Day 9"
+subtitle: "Start implementing dsh: Distributed Shell"
+categories: TIL
+tags: [TIL,sysprog]
+---
+
+
+## Description 
+- 전에 만들었던 채팅 서버를 이용하여 distributed shell을 구현한다.
+- 서버(dsh)에서 원하는 terminal을 골라 명령어를 보내면 해당 terminal에서 명령을 실행하고 그 결과를 dsh로 전송한다.
+
+
+## TIL
+
+**dup2**
+
+`int dup2(int oldfd, int newfd);`
+
+newfd가 oldfd와 같은 open file descriptor를 참조하도록 adjust된다. 즉, oldfd가 newfd에 덮어씌워진다. 실행에 성공할 경우 새로운 file descriptor를 리턴하고, 에러일 경우 -1을 리턴한다.
+
+**exec**
+```
+int execl (const char *path, const char *arg, ...) ;
+int execlp(const char *file, const char *arg, ...) ;
+int execle(const char *path, const char *arg, ...) ;
+int execv(const char *path, char *const argv[]) ;
+int execvp(const char *file, char *const argv[]) ;
+int exect(const char *path, char *const argv[], char *const envp[]) ;
+```
+- 첫 번째 인자가 path인 함수들(execl, execle, exect, execv)은 실행할 파일의 path로 프로그램을 지정하고 그렇지 않은 함수들(execlp, execvp - p가 붙어있음)은 파일의 이름으로 프로그램을 지정한다.
+- execl, execlp, execle (l이 포함) 함수들은 프로그램에 이용할 인수 리스트를 NULL 캐릭터로 끝나는 string으로 받고, exect, execv, execv (c가 포함) 함수들은 NULL 캐릭터로 끝나는 스트링들의 배열으로 받는다.
+- execle, exect 함수들은 환경변수 설정이 가능하다.
+
+<br>
