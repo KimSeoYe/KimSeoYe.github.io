@@ -157,7 +157,7 @@ yat:
 defaults:
   home:
     heading: "DevLog"
-    subheading: "Seo-ye's growth record"
+    subheading: "The record of failure and growth"
     # banner: "Your image url"
 
 # Banner default settings
