@@ -157,7 +157,7 @@ yat:
 defaults:
   home:
     heading: "DevLog"
-    subheading: "The record of failure and growth"
+    subheading: "A record of failure and growth"
     # banner: "Your image url"
 
 # Banner default settings
