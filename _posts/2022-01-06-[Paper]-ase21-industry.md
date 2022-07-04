@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[Paper Review] Improving Configurability of Unit-level Continuous Fuzzing : An Industrial Case Study with SAP HANA"
-subtitle: "ase21-industry"
+title: "[Paper Review] Improving Configurability of Unit-level Continuous Fuzzing"
+subtitle: "An Industrial Case Study with SAP HANA"
 categories: Study
 tags: [study,paper,review]
 ---
