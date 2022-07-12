@@ -1,0 +1,14 @@
+<p><strong>Goals:</strong> Understand how the scheduler works. Understand how to implement a scheduling policy and characterize its impact on performance. Understand priority inversion and a possible solution for it.</p>
+
+<h3 id="system-call">System Call</h3>
+
+<p><code class="language-plaintext highlighter-rouge">setpriority()</code> system call을 추가하기 위해서,</p>
+<ul>
+  <li><strong>proc.c</strong>에 <code class="language-plaintext highlighter-rouge">setpriority(int pid, int val)</code>를 implement한다.</li>
+  <li><strong>defs.h</strong>에 setpriority의 정의를 추가한다.</li>
+  <li><strong>sysproc.c</strong>에 handler function <code class="language-plaintext highlighter-rouge">sys_setpriority()</code>를 추가한다. 이때, <code class="language-plaintext highlighter-rouge">argint()</code>를 사용해 argument들을 가져와 <code class="language-plaintext highlighter-rouge">setpriority()</code>를 실행한다.</li>
+  <li><strong>syscall.h</strong>에 새로운 system call number(SYS_setpriority)를 정의한다.</li>
+  <li><strong>syscall.c</strong>에 handler function을 정의하고, syscall table에 해당 function을 추가한다.</li>
+  <li><strong>usys.S</strong>에 <code class="language-plaintext highlighter-rouge">SYSCALL(setpriority)</code>를 추가한다.</li>
+  <li>user program이 해당 system call을 사용할 수 있도록 <strong>user.h</strong>에 setpriority의 정의를 추가한다.</li>
+</ul>

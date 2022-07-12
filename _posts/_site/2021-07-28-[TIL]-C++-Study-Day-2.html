@@ -1,0 +1,34 @@
+<h1 id="chapter-3-reference-types">Chapter 3. Reference Types</h1>
+
+<ul>
+  <li>C++ 의 references (using &amp;)에 대해 공부했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">const</code> 키워드에 대해 공부했다.
+    <ul>
+      <li>함수의 argument를 const로 선언하면 함수의 scope 내에서 해당 argument의 수정을 막는다.</li>
+      <li>method를 const로 선언하는 것은 해당 method 내에서 current object의 state를 수정하지 않는다는 의미이다.</li>
+      <li>object의 member variable을 const로 선언하면, 해당 멤버 변수는 initialization 이후에는 수정할 수 없다.</li>
+    </ul>
+  </li>
+  <li>객체의 멤버들을 초기화하기 위해 constructor에서 Member initializer lists를 사용할 수 있다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="chater-4-the-object-life-cycle">Chater 4. The Object Life Cycle</h1>
+
+<ul>
+  <li>여러 object들의 storage duration에 대해 공부했다 : 여러 storage duration의 차이를 알고 사용하는 방법을 배웠다.
+    <ul>
+      <li>Automatic Storage Duration : Automatic object는 code block의 시작에서 allocate되고 끝에서 deallocate된다. (Ex. function parameters, local variables)</li>
+      <li>Static Storage Duration : Static object는 <code class="language-plaintext highlighter-rouge">static</code>이나 <code class="language-plaintext highlighter-rouge">extern</code> 키워드를 사용해 선언된 객체들으로, 프로그램이 시작할 때 allocate되고 프로그램이 끝날 때 deallocate된다.
+        <ul>
+          <li>Local Static Variable : 함수 안에서 static으로 선언된 변수, 함수의 첫 실행 때 allocate되고 프로그램이 끝날 때 deallocate된다.</li>
+          <li>Static Members : Class의 instance에 영향받지 않고 공유되는 member</li>
+        </ul>
+      </li>
+      <li>Thread-Local Storage Duration : <code class="language-plaintext highlighter-rouge">thread-local</code> 키워드를 사용하며, 각 thread마다 thread-local 변수의 copy를 가지게 된다.</li>
+      <li>Dynamic Storage Duration : 요청에 의해 allocate / deallocate 된다.</li>
+    </ul>
+  </li>
+  <li>throw - catch 를 통해 다양한 execption을 handling하는 방법을 배웠다.</li>
+</ul>

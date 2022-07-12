@@ -1,0 +1,30 @@
+<h3 id="example-w-wait-system-call">Example w/ <code class="language-plaintext highlighter-rouge">wait()</code> system call</h3>
+
+<ol>
+  <li>User program : call <code class="language-plaintext highlighter-rouge">wait()</code></li>
+  <li>trapasm.S : build trap frame (stack switch) &amp; call <code class="language-plaintext highlighter-rouge">trap()</code></li>
+  <li>trap.c : trap frame에 저장된 trap number가 T_SYSCALL이면 call <code class="language-plaintext highlighter-rouge">syscall()</code></li>
+  <li>syscall.c : syscall table에서 tf-&gt;eax에 저장된 SYS_wait을 index로 사용하여 system call handler function인 <code class="language-plaintext highlighter-rouge">sys_wait()</code>을 부른다</li>
+  <li>sys_wait : <code class="language-plaintext highlighter-rouge">argptr()</code>을 사용해 user stack에 저장된 argument 가져오기 &amp; call <code class="language-plaintext highlighter-rouge">wait()</code></li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="lab-2-scheduling">Lab 2. Scheduling</h1>
+
+<p><strong>Goals:</strong> Understand how the scheduler works. Understand how to implement a scheduling policy and characterize its impact on performance. Understand priority inversion and a possible solution for it.</p>
+
+<h3 id="chapter-5-scheduling-p59">Chapter 5. Scheduling (p.59~)</h3>
+
+<ul>
+  <li>xv6의 경우 scheduler도 자신의 stack을 가지고 있다.</li>
+  <li>(p1: user mode &gt; kernel mode) &gt; p1 kernel &gt; scheduler kernel &gt; p2 kernel &gt; (p2: kernel mode &gt; user mode)</li>
+  <li>Context switch를 할 때도 stack switch가 일어난다.
+    <ul>
+      <li>context register set들을 stack에 push한 뒤 stack pointer를 바꿔줌으로써 context switch를 implement한다.</li>
+      <li>stack pointer가 바뀌었으므로 그 다음 pop하는 값들은 새로운 context의 값들이다.</li>
+    </ul>
+  </li>
+  <li>Timer interrupt가 일어날 때마다 Context switch를 시작하는 함수를 호출한다.</li>
+</ul>
+

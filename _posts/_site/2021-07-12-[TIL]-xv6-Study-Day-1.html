@@ -1,0 +1,47 @@
+<h3 id="1-physical-address-space">1. Physical Address Space</h3>
+
+<ul>
+  <li>GNU 소프트웨어 시스템을 위한 기본 디버거인 gdb(GNU Debugger)를 사용해 보았다.
+    <ul>
+      <li>b : breakpoint</li>
+      <li>x/Ni ADDR : 메모리에서의 instruction 실행을 확인할 수 있다. (N: 확인할 instruction의 개수)</li>
+      <li>c : continue</li>
+      <li>si : step instruction</li>
+    </ul>
+  </li>
+  <li>초기의 PC는 1MB의 physical memory만 사용할 수 있었다.
+    <ul>
+      <li>640KB Low Memory : RAM</li>
+      <li>384KB : reserved by HW (non-volatile)
+        <ul>
+          <li>BIOS : Basic Input Ouptut System</li>
+        </ul>
+      </li>
+      <li>사용할 수 있는 메모리의 크기가 확장되면서, 이전의 SW들과의 호환성 유지를 위해 RAM 영역이 640KB Low memory와 Extended memory 영역으로 구분되었다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>ROM BIOS</strong></p>
+<ol>
+  <li>Interrupt descriptor table을 셋업한다.</li>
+  <li>PCI bus와 여러 device들을 initialize한다.</li>
+  <li>bootable device를 search한다.</li>
+  <li>Boot sector를 메모리에 load하여 boot loader를 읽는다.</li>
+  <li>컨트롤을 boot loader에게 넘겨준다.</li>
+</ol>
+
+<p><br /></p>
+
+<h3 id="2-the-boot-loader">2. The Boot Loader</h3>
+
+<ul>
+  <li>Boot sector : bootable disck의 첫번째 sector로, boot loader의 코드가 들어있다.</li>
+  <li>Boot loader
+    <ol>
+      <li>프로세서를 real mode에서 32-bit protected mode로 전환한다.</li>
+      <li>hard disk로부터 커널을 읽어온다.</li>
+    </ol>
+  </li>
+</ul>
+

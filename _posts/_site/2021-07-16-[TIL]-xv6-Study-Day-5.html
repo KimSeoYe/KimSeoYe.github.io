@@ -1,0 +1,45 @@
+<h3 id="code--assembly-trap-handlers-textbook-p42">Code : Assembly trap handlers (textbook p.42)</h3>
+
+<ul>
+  <li>int : processor가 trap을 발생시키도록 하는 instruction (x86에는 256개의 interrupt가 있다.)</li>
+  <li>xv6는 trap이 일어났을 때 x86 하드웨어가 stack switch를 하도록 한다.
+    <ul>
+      <li>하드웨어가 stack segment selector와 new value for esp(esp가 이제 어디를 point해야 하는지)를 load한다.</li>
+      <li>switchuvm : user process의 kernel stack의 top address를 task segment descriptor에 저장한다.</li>
+    </ul>
+  </li>
+  <li><strong>Todo.</strong> <em>stack segment selector</em>와 <em>task segment descriptor</em>에 대한 정보 더 찾아보기</li>
+</ul>
+
+<h4 id="more-description-about-trap--stack-switch">more description about trap &amp; stack switch</h4>
+<ol>
+  <li>trap이 일어났을 때, 첫 번째로
+    <ul>
+      <li>process가 user mode에서 실행되고 있었을 경우 : task segment descriptor로부터 %esp(stack pointer reg.)와 %ss(stack segment reg.) 를 load » 새로운 stack에 넣는다.</li>
+      <li>process가 kernel mode에서 실행되고 있었을 경우 : 아무 일도 하지 않는다.</li>
+    </ul>
+  </li>
+  <li>processor가 %eflag, %cs, %eip register를 push한다.
+    <ul>
+      <li>몇몇 trap에 대해서는 error word를 push하기도 한다.</li>
+    </ul>
+  </li>
+  <li>%eip와 %cs register를 해당하는 IDT entry로부터 load한다.
+    <ul>
+      <li>각 entry가 error code, interrupt number를 push하고, alltraps로 jump한다.</li>
+    </ul>
+  </li>
+  <li>alltraps가 %ds, %es, %fs, %gs, 범용 레지스터들을 push한다.</li>
+</ol>
+
+<p>이 과정을 통해 kernel stack이 trap이 일어났을 때의 processor register 정보들을 담은 stack frame을 포함하게 된다.</p>
+
+<h3 id="code--system-calls-textbook-p45">Code : System calls (textbook p.45)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">argint</code>, <code class="language-plaintext highlighter-rouge">argptr</code>, <code class="language-plaintext highlighter-rouge">argstr</code>, <code class="language-plaintext highlighter-rouge">argfd</code> : n번째 system call argument에 접근할 수 있도록 돕는 함수들</p>
+<ul>
+  <li>trap frame에 저장된 user-space %esp 는 system call의 return address를 담고 있다.</li>
+  <li>system call의 argument들은 그 바로 위에 있다. (%esp + 4)</li>
+  <li>따라서 n번째 argument는 %esp + 4 + 4*n 에 위치해 있다.</li>
+</ul>
+
