@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "[Study] JQF+Zest"
-subtitle: "Semantic Fuzzing for Java"
+title: "[Study] JQF"
+subtitle: "https://github.com/rohanpadhye/JQF"
 categories: Study
 tags: [study,oss,research]
 ---
 
-## [JQF](https://github.com/rohanpadhye/JQF)
+[https://github.com/rohanpadhye/JQF](https://github.com/rohanpadhye/JQF)
 
 ### Overview
 * A feedback-directed fuzz testing platform for Java : JVM bytecode를 위한 AFL/LibFuzzer 같은 느낌
@@ -45,6 +45,78 @@ public class PatriciaTrieTest {
   
 ### Tutorial: Fuzzing with AFL ([link](https://github.com/rohanpadhye/jqf/wiki/Fuzzing-with-AFL))
 
+#### Setup & Install JQF
+```bash
+# Clone and build AFL
+git clone https://github.com/google/afl && (cd afl && make)
+
+# Set AFL directory location
+export AFL_DIR=$(pwd)/afl
+
+# Clone and build JQF
+git clone https://github.com/rohanpadhye/jqf && jqf/setup.sh
+
+### See usage of JQF-AFL
+jqf/bin/jqf-afl-fuzz
+```
+
+#### Write a test driver
+* JQF의 test driver는 JUnit 스타일 클래스로, 다음과 같은 annotation을 사용해야 한다.
+  * `@RunWith(JQF.class)` : test class 위에 위치
+  * `@Fuzz` : test method 위에 위치
+* Test method는 `public void` 타입이어야 한다.
+* JQF+AFL을 사용할 경우, test method은 딱 하나의 `InputStream` 타입 formal parameter를 가져야 한다.
+* 작성한 test driver를 `javac`를 사용해 컴파일한다. 
+  * 이 때 JQF와 모든 dependency들을 classpath에 포함시켜야 하는데, JQF는 이것을 `classpath.sh` 배쉬 스크립트를 통해 사용할 수 있도록 만들어 두었다.
+* 예제
+  * PngTest.java
+    ```java
+    import javax.imageio.ImageIO;
+    import javax.imageio.ImageReader;
+    import javax.imageio.stream.ImageInputStream;
+    import java.io.FileOutputStream;
+    import java.io.IOException;
+    import java.io.InputStream;
+
+    import edu.berkeley.cs.jqf.fuzz.Fuzz;
+    import edu.berkeley.cs.jqf.fuzz.JQF;
+    import org.junit.Assume;
+    import org.junit.runner.RunWith;
+
+    @RunWith(JQF.class)
+    public class PngTest {
+
+        @Fuzz /* JQF will generate inputs to this method */
+        public void testRead(InputStream input)  {
+            // Create parser
+            ImageReader reader = ImageIO.getImageReadersByFormatName("png").next();
+
+            // Decode image from input stream
+            try {
+                reader.setInput(ImageIO.createImageInputStream(input));
+
+                // Bound dimensions to avoid OOM
+                Assume.assumeTrue(reader.getHeight(0) <= 256);
+                Assume.assumeTrue(reader.getWidth(0) <= 256);
+
+                // Decode first image in the input stream
+                reader.read(0); 
+            } catch (IOException e) {
+                // This exception signals invalid input and not a test failure
+                Assume.assumeNoException(e);
+            }
+        }
+    }
+    ```
+  * compile
+    ```bash
+    javac -cp .:$(jqf/scripts/classpath.sh) PngTest.java 
+    ```
+
+#### Fuzzing with jqf-afl-fuzz
+```bash
+jqf/bin/jqf-afl-fuzz -i $AFL_DIR/testcases/images/png/ PngTest testRead
+```
 
 ### Document: JQF Maven Plugin ([link](https://github.com/rohanpadhye/JQF/wiki/JQF-Maven-Plugin))
 
