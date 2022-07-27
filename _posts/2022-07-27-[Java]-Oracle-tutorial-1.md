@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "[Java] Oracle tutorial: The Java Technology Phenomenon"
+title: "[Java] Oracle tutorial: Getting Started"
 subtitle: "https://docs.oracle.com/javase/tutorial/getStarted/intro/index.html"
 categories: Study
 tags: [study,java]
 ---
+
+## The Java Technology Phenomenon
 
 ### The Java Programming Language
 
