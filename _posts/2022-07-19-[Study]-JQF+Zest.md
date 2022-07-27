@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Study] JQF"
+title: "[OSS] JQF"
 subtitle: "https://github.com/rohanpadhye/JQF"
 categories: Study
 tags: [study,oss,research]
