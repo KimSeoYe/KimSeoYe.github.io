@@ -3,7 +3,7 @@ layout: post
 title: "[Experience] 2022 ERC Workshop 포스터 발표 후기"
 subtitle: "소프트웨어재난연구센터 여름정기 워크숍"
 categories: Experiences
-tags: [kcc,conference]
+tags: [erc,starr,workshop]
 ---
 
 [포스터 pdf](/assets/resources/erc22-poster.pdf)
