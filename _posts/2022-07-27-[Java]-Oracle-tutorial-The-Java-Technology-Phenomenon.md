@@ -17,14 +17,13 @@ Java에서 모든 소스코드는 `.java` 확장자를 가진 plain text 파일�
 
 ### The Java Platform
 
-플랫폼이란 프로그램이 실행되는 하드웨어나 소프트웨어 환경을 의미하며, 대표적인 예로 Microsoft Windows, Linux, Solaris OS, Mac OS 등이 있다.
-
-대부분의 플랫폼은 OS와 하드웨어의 조합으로 설명되지만, 자바 플랫폼은 hardware-based 플랫폼 위에서 실행되는 software-only 플랫폼이라는 점에서 다른 것들과 차이가 있다.
+플랫폼이란 프로그램이 실행되는 하드웨어나 소프트웨어 환경을 의미하며, 대표적인 예로 Microsoft Windows, Linux, Solaris OS, Mac OS 등이 있다. 대부분의 플랫폼은 OS와 하드웨어의 조합으로 설명되지만, 자바 플랫폼은 hardware-based 플랫폼 위에서 실행되는 software-only 플랫폼이라는 점에서 다른 것들과 차이가 있다.
 
 자바 플랫폼은 두가지 컴포넌트로 구성된다.
 * JVM (Java Virtual machine)
 * Java API (Application Programming Interface)
 
-JVM은 자바 플랫폼의 기초이며, 다양한 hardware-based 플랫폼에 이식된다.
+JVM은 자바 플랫폼의 기초이며, 다양한 hardware-based 플랫폼에 이식된다. API는 ready-made 소프트웨어 컴포넌트들의 큰 집합으로, 연관된 클래스들과 interface들이 라이브러리로 묶여있다. 이 라이브러리를 package라고 한다.
 
-API는 ready-made 소프트웨어 컴포넌트들의 큰 집합으로, 연관된 클래스들과 interface들이 라이브러리로 묶여있다. 이 라이브러리를 package라고 한다.
+![image](https://user-images.githubusercontent.com/47961698/181166644-e08f6845-ae8d-4061-a588-b9fdc9be0bda.png)
+
