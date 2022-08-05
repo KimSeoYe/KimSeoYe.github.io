@@ -87,6 +87,8 @@ JQF를 사용할 때 instrumentation은 런타임에 다이나믹하게 일어�
 * [log_to_file()](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/c/afl-proxy.c#L71) : `jqf-afl-fuzz`를 실행할 때 로그 파일 옵션을 줄 수 있는데, 옵션이 있으면 특정 파일에 로그를 남겨주는 것으로 보인다.
 * JQF main과 proxy 사이의 통신은 named pipe를 사용한다.
 * AFL과 proxy 사이의 통신도 named pipe(FORKSRV_FD, FORKSRV_FD+1)를 사용하는데, 추가적으로 커버리지 정보, 즉 trace_bits를 업데이트할 때는 AFL이 사용하는 shared memory를 업데이트해주는 방식을 사용한다.
+  * [FORKSRV_FD](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/c/afl-proxy.h#L24) : 198로 정의되어 있으며, 198은 AFL로부터 읽을 때, 199는 AFL에 쓸 때 사용하는 pipe의 file descriptor인 것으로 보인다.
+  * [SHM_ENV_VAR](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/c/afl-proxy.h#L23) : 환경변수 사용하여 AFL이 사용하는 shared memory의 id를 얻어온다.
 * 무의미한 4 bytes를 주고받음으로써 통신을 시작한다.
 * 전반적인 프로토콜은 다음과 같다.
   1. proxy가 AFL에 4바이트("HELO")를 전송하고, AFL로부터 4바이트("HELO")를 읽는다. (FORKSRV_FD, FORKSRV_FD+1 사용)
