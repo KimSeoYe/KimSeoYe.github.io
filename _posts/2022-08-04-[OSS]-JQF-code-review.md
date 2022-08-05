@@ -8,7 +8,7 @@ tags: [study,oss,research]
 
 ## JQF+AFL 코드 리뷰
 
-AFL <-> proxy <-> JQF (w/ target)
+AFL <-shm-> proxy <-named pipe-> JQF (w/ target)
 
 JQF는 c/c++ 프로그램 대상인 AFL이 java 프로그램을 fuzzing할 수 있도록 구현해 둔 어댑터 같은 것이다.
 
@@ -74,7 +74,7 @@ JQF를 사용할 때 instrumentation은 런타임에 다이나믹하게 일어�
 
 * 저장된 traceBits와 status(SUCCESS, FAILURE, INVALID, TIMEOUT)를 적절히 가공 후 feedback 버퍼에 카피해, proxy를 통해 AFL쪽에 전송한다.
 * [#267](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/java/edu/berkeley/cs/jqf/fuzz/afl/AFLGuidance.java#L267) : traceBits[0]이 0인 경우 AFL이 instrumentation이 되지 않았다고 판단하고 오류를 낸다고 한다. 이를 방지하기 위해 첫 번째 bit을 확인해 set 해주는 내용이다.
-* [#271-312](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/java/edu/berkeley/cs/jqf/fuzz/afl/AFLGuidance.java#L271-L312) : result를 바탕으로 status를 판단한다. result는 `handleResult()`의 파라미터로 넘어오며, `handleResult()`는 [`evaluate()`](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/java/edu/berkeley/cs/jqf/fuzz/junit/quickcheck/FuzzStatement.java#L96)에 의해 불린다. `evaluate()`는 [`guidance.run()`](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/java/edu/berkeley/cs/jqf/fuzz/junit/quickcheck/FuzzStatement.java#L146)의 결과, 즉 발생하는 exception의 종류에 따라 status를 판단한다.
+* [#271-312](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/java/edu/berkeley/cs/jqf/fuzz/afl/AFLGuidance.java#L271-L312) : result를 바탕으로 status를 판단한다. result는 handleResult()의 파라미터로 넘어오며, handleResult()는 [evaluate()](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/java/edu/berkeley/cs/jqf/fuzz/junit/quickcheck/FuzzStatement.java#L96)에 의해 불린다. evaluate()는 [guidance.run()](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/java/edu/berkeley/cs/jqf/fuzz/junit/quickcheck/FuzzStatement.java#L146)의 결과, 즉 발생하는 exception의 종류에 따라 status를 판단한다.
 * [#315-320](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/java/edu/berkeley/cs/jqf/fuzz/afl/AFLGuidance.java#L314-L320) : status와 traceBits를 feedback 버퍼에 카피한다.
 * [#324-329](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/java/edu/berkeley/cs/jqf/fuzz/afl/AFLGuidance.java#L323-L329) : feedback 버퍼의 내용을 proxy를 통해 AFL쪽으로 전송한다.
 
@@ -84,3 +84,5 @@ JQF를 사용할 때 instrumentation은 런타임에 다이나믹하게 일어�
 **[/fuzz/src/main/c/afl-proxy.c](https://github.com/rohanpadhye/JQF/blob/master/fuzz/src/main/c/afl-proxy.c)**
 
 * /bin/jqf-afl-target가 실행하는 /bin/afl-proxy의 소스코드이다
+* [log_to_file()](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/c/afl-proxy.c#L71) : `jqf-afl-fuzz`를 실행할 때 로그 파일 옵션을 줄 수 있는데, 옵션이 있으면 특정 파일에 로그를 남겨주는 것으로 보인다.
+* JQF main과 proxy 사이의 통신은 named pipe를 사용하고, AFL과 proxy 사이의 통신은 shared memory를 사용한다.
