@@ -8,7 +8,7 @@ tags: [study,oss,research]
 
 ## JQF+AFL 코드 리뷰
 
-AFL <-shm-> proxy <-named pipe-> JQF (w/ target)
+AFL <-named pipe, shm-> proxy <-named pipe-> JQF (w/ target)
 
 JQF는 c/c++ 프로그램 대상인 AFL이 java 프로그램을 fuzzing할 수 있도록 구현해 둔 어댑터 같은 것이다.
 
@@ -57,8 +57,8 @@ JQF를 사용할 때 instrumentation은 런타임에 다이나믹하게 일어�
 
 * java 프로그램을 대상으로 하고 있으므로, 타겟인 bytecode를 수정한다
 * `transformer.transform()` ([/instrument/.../SnoopInstructionTransformer.java](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/instrument/src/main/java/janala/instrument/SnoopInstructionTransformer.java#L84))을 사용해 bytecode를 수정한다
-  * #103-104 : 해당 클래스를 수정한 기록(cache)이 있는지 확인한다
-  * #122-125 : 캐시가 없으면 클래스를 변환하는데, 이 때 클래스를 읽고 쓰는 사이에 visitor를 끼워 넣는 방식을 사용한다
+  * [#103-104](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/instrument/src/main/java/janala/instrument/SnoopInstructionTransformer.java#L103-L104) : 해당 클래스를 수정한 기록(cache)이 있는지 확인한다
+  * [#122-125](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/instrument/src/main/java/janala/instrument/SnoopInstructionTransformer.java#L122-L125) : 캐시가 없으면 클래스를 변환하는데, 이 때 클래스를 읽고 쓰는 사이에 visitor를 끼워 넣는 방식을 사용한다
     * java 클래스를 분해, 수정, 재구성하기 위한 asm 라이브러리를 사용해 구현된 [`SnoopInstructionClassAdapter`](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/instrument/src/main/java/janala/instrument/SnoopInstructionClassAdapter.java#L9) 인스턴스를 visitor로 사용한다
 
 ## Event Handling (Coverage)
@@ -85,4 +85,13 @@ JQF를 사용할 때 instrumentation은 런타임에 다이나믹하게 일어�
 
 * /bin/jqf-afl-target가 실행하는 /bin/afl-proxy의 소스코드이다
 * [log_to_file()](https://github.com/rohanpadhye/JQF/blob/9436c4fdafee3f97d73f29ef7ecc3cd283924f7e/fuzz/src/main/c/afl-proxy.c#L71) : `jqf-afl-fuzz`를 실행할 때 로그 파일 옵션을 줄 수 있는데, 옵션이 있으면 특정 파일에 로그를 남겨주는 것으로 보인다.
-* JQF main과 proxy 사이의 통신은 named pipe를 사용하고, AFL과 proxy 사이의 통신은 shared memory를 사용한다.
+* JQF main과 proxy 사이의 통신은 named pipe를 사용한다.
+* AFL과 proxy 사이의 통신도 named pipe(FORKSRV_FD, FORKSRV_FD+1)를 사용하는데, 추가적으로 커버리지 정보, 즉 trace_bits를 업데이트할 때는 AFL이 사용하는 shared memory를 업데이트해주는 방식을 사용한다.
+* 무의미한 4 bytes를 주고받음으로써 통신을 시작한다.
+* 전반적인 프로토콜은 다음과 같다.
+  1. proxy가 AFL에 4바이트("HELO")를 전송하고, AFL로부터 4바이트("HELO")를 읽는다. (FORKSRV_FD, FORKSRV_FD+1 사용)
+  2. proxy가 AFL에 4바이트의 child pid를 전송한다. 
+     * JQF는 fork를 하지 않고, AFL에서 프로세스 kill을 할 필요가 없기 때문에 (JQF에서 타임아웃 체크를 함) 사실 특별한 의미는 없다.
+  3. proxy가 JQF에 4바이트("HELO")를 전송하고, JQF로부터 4바이트의 status 정보를 읽는다.
+  4. proxy가 JQF로부터 n바이트의 traceBits 정보를 읽고, shared memory를 통해 이를 AFL쪽에 전달한다.
+  5. proxy가 FORKSRV_FD + 1을 통해 AFL에 4바이트의 status 정보를 전달한다.
