@@ -1,0 +1,134 @@
+<p><a href="https://github.com/rohanpadhye/JQF">https://github.com/rohanpadhye/JQF</a></p>
+
+<h3 id="overview">Overview</h3>
+<ul>
+  <li>A feedback-directed fuzz testing platform for Java : JVM bytecode를 위한 AFL/LibFuzzer 같은 느낌</li>
+  <li>Fuzz driver를 parametric JUnit test methods로 작성할 수 있음.</li>
+  <li>Zest와 같은 coverage-guided fuzzing algorithm을 사용하여 <a href="https://github.com/pholser/junit-quickcheck">junit-quickcheck</a> 스타일의 parameterized unit test를 실행할 수 있음</li>
+  <li><code class="language-plaintext highlighter-rouge">mvn jqf:fuzz</code> : JQF가 Zest를 실행 (default)</li>
+  <li>다음과 같은 pluggable fuzzing front-ends를 지원하는 모듈형 프레임워크
+    <ul>
+      <li>AFL: binary fuzzing (<a href="https://github.com/rohanpadhye/jqf/wiki/Fuzzing-with-AFL">tutorial</a>)</li>
+      <li><a href="https://rohan.padhye.org/files/zest-issta19.pdf">Zest</a>: semantic fuzzing</li>
+      <li>PerfFuzz: complexity fuzzing</li>
+      <li>PLCheck: reinforcement learning</li>
+      <li>BigFuzz: Apache Spark fuzzing</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="example">Example</h3>
+<ul>
+  <li>(<a href="https://commons.apache.org/proper/commons-collections/">Apache Commons Collection</a>) <a href="https://commons.apache.org/proper/commons-collections/apidocs/org/apache/commons/collections4/trie/PatriciaTrie.html">PatriciaTrie</a> 클래스의 property를 테스트하기 위한 JUnit-Quickcheck test
+    <ul>
+      <li>PracticalTrie가 input JDK Map으로 초기화 되어 있는지</li>
+      <li>Input map이 이미 하나의 key를 포함하고 있으면, 해당 key가 새로 생성된 PracticalTrie에 존재해야 함
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RunWith</span><span class="o">(</span><span class="no">JQF</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PatriciaTrieTest</span> <span class="o">{</span>
+
+<span class="nd">@Fuzz</span>  <span class="cm">/* The args to this method will be generated automatically by JQF */</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testMap2Trie</span><span class="o">(</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">,</span> <span class="nc">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Key should exist in map</span>
+    <span class="n">assumeTrue</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">key</span><span class="o">));</span>   <span class="c1">// the test is invalid if this predicate is not true</span>
+
+    <span class="c1">// Create new trie with input `map`</span>
+    <span class="nc">Trie</span> <span class="n">trie</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PatriciaTrie</span><span class="o">(</span><span class="n">map</span><span class="o">);</span>
+
+    <span class="c1">// The key should exist in the trie as well</span>
+    <span class="n">assertTrue</span><span class="o">(</span><span class="n">trie</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">key</span><span class="o">));</span>  <span class="c1">// fails when map = {"x": 1, "x\0": 2} and key = "x"</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">mvn jqf:fuzz</code> : 자동 생성된 map과 key 값을 사용해 testMap2Trie()를 반복 호출</li>
+</ul>
+
+<h3 id="tutorial-fuzzing-with-afl-link">Tutorial: Fuzzing with AFL (<a href="https://github.com/rohanpadhye/jqf/wiki/Fuzzing-with-AFL">link</a>)</h3>
+
+<h4 id="setup--install-jqf">Setup &amp; Install JQF</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone and build AFL</span>
+git clone https://github.com/google/afl <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="nb">cd </span>afl <span class="o">&amp;&amp;</span> make<span class="o">)</span>
+
+<span class="c"># Set AFL directory location</span>
+<span class="nb">export </span><span class="nv">AFL_DIR</span><span class="o">=</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/afl
+
+<span class="c"># Clone and build JQF</span>
+git clone https://github.com/rohanpadhye/jqf <span class="o">&amp;&amp;</span> jqf/setup.sh
+
+<span class="c">### See usage of JQF-AFL</span>
+jqf/bin/jqf-afl-fuzz
+</code></pre></div></div>
+
+<h4 id="write-a-test-driver">Write a test driver</h4>
+<ul>
+  <li>JQF의 test driver는 JUnit 스타일 클래스로, 다음과 같은 annotation을 사용해야 한다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">@RunWith(JQF.class)</code> : test class 위에 위치</li>
+      <li><code class="language-plaintext highlighter-rouge">@Fuzz</code> : test method 위에 위치</li>
+    </ul>
+  </li>
+  <li>Test method는 <code class="language-plaintext highlighter-rouge">public void</code> 타입이어야 한다.</li>
+  <li>JQF+AFL을 사용할 경우, test method은 딱 하나의 <code class="language-plaintext highlighter-rouge">InputStream</code> 타입 formal parameter를 가져야 한다.</li>
+  <li>작성한 test driver를 <code class="language-plaintext highlighter-rouge">javac</code>를 사용해 컴파일한다.
+    <ul>
+      <li>이 때 JQF와 모든 dependency들을 classpath에 포함시켜야 하는데, JQF는 이것을 <code class="language-plaintext highlighter-rouge">classpath.sh</code> 배쉬 스크립트를 통해 사용할 수 있도록 만들어 두었다.</li>
+    </ul>
+  </li>
+  <li>예제
+    <ul>
+      <li>PngTest.java
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">javax.imageio.ImageIO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.imageio.ImageReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.imageio.stream.ImageInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">edu.berkeley.cs.jqf.fuzz.Fuzz</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">edu.berkeley.cs.jqf.fuzz.JQF</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.Assume</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.runner.RunWith</span><span class="o">;</span>
+
+<span class="nd">@RunWith</span><span class="o">(</span><span class="no">JQF</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PngTest</span> <span class="o">{</span>
+
+    <span class="nd">@Fuzz</span> <span class="cm">/* JQF will generate inputs to this method */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testRead</span><span class="o">(</span><span class="nc">InputStream</span> <span class="n">input</span><span class="o">)</span>  <span class="o">{</span>
+        <span class="c1">// Create parser</span>
+        <span class="nc">ImageReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="nc">ImageIO</span><span class="o">.</span><span class="na">getImageReadersByFormatName</span><span class="o">(</span><span class="s">"png"</span><span class="o">).</span><span class="na">next</span><span class="o">();</span>
+
+        <span class="c1">// Decode image from input stream</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">reader</span><span class="o">.</span><span class="na">setInput</span><span class="o">(</span><span class="nc">ImageIO</span><span class="o">.</span><span class="na">createImageInputStream</span><span class="o">(</span><span class="n">input</span><span class="o">));</span>
+
+            <span class="c1">// Bound dimensions to avoid OOM</span>
+            <span class="nc">Assume</span><span class="o">.</span><span class="na">assumeTrue</span><span class="o">(</span><span class="n">reader</span><span class="o">.</span><span class="na">getHeight</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="mi">256</span><span class="o">);</span>
+            <span class="nc">Assume</span><span class="o">.</span><span class="na">assumeTrue</span><span class="o">(</span><span class="n">reader</span><span class="o">.</span><span class="na">getWidth</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="mi">256</span><span class="o">);</span>
+
+            <span class="c1">// Decode first image in the input stream</span>
+            <span class="n">reader</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> 
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// This exception signals invalid input and not a test failure</span>
+            <span class="nc">Assume</span><span class="o">.</span><span class="na">assumeNoException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>        </div>
+      </li>
+      <li>compile
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>javac <span class="nt">-cp</span> .:<span class="si">$(</span>jqf/scripts/classpath.sh<span class="si">)</span> PngTest.java 
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="fuzzing-with-jqf-afl-fuzz">Fuzzing with jqf-afl-fuzz</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jqf/bin/jqf-afl-fuzz <span class="nt">-i</span> <span class="nv">$AFL_DIR</span>/testcases/images/png/ PngTest testRead
+</code></pre></div></div>
+
+<h3 id="document-jqf-maven-plugin-link">Document: JQF Maven Plugin (<a href="https://github.com/rohanpadhye/JQF/wiki/JQF-Maven-Plugin">link</a>)</h3>
+
+<h3 id="document-writing-a-jqf-test-link">Document: Writing a JQF test (<a href="https://github.com/rohanpadhye/JQF/wiki/Writing-a-JQF-test">link</a>)</h3>

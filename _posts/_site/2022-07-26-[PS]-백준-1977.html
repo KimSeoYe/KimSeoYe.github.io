@@ -1,0 +1,43 @@
+<h3 id="문제">문제</h3>
+<p>M과 N이 주어질 때 M이상 N이하의 자연수 중 완전제곱수인 것을 모두 골라 그 합을 구하고 그 중 최솟값을 찾는 프로그램을 작성하시오. 
+예를 들어 M=60, N=100인 경우 60이상 100이하의 자연수 중 완전제곱수는 64, 81, 100 이렇게 총 3개가 있으므로 그 합은 245가 되고 이 중 최솟값은 64가 된다.</p>
+
+<h3 id="접근">접근</h3>
+<p>제곱수들을 brute force로 찾는 방향으로 접근했다. M보다 크거나 같은 첫 번째 제곱수를 찾기 위해 루트를 사용했는데, 쓸데없이 복잡하게 생각하지 않았나 하는 느낌이 있긴 하다…</p>
+
+<p>문제 조건을 제대로 확인하지 않아서 (제곱수가 없는 경우 -1 출력) 어이없이 틀렸었다.</p>
+
+<h3 id="코드">코드</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span> <span class="p">;</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">M</span><span class="p">,</span> <span class="n">N</span> <span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">M</span> <span class="o">&gt;&gt;</span> <span class="n">N</span> <span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">root</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="p">;</span>
+    <span class="kt">int</span> <span class="n">sq</span> <span class="o">=</span> <span class="n">root</span> <span class="o">*</span> <span class="n">root</span> <span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sq</span> <span class="o">&lt;</span> <span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">root</span><span class="o">++</span> <span class="p">;</span>
+        <span class="n">sq</span> <span class="o">=</span> <span class="n">root</span> <span class="o">*</span> <span class="n">root</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sq</span> <span class="o">&gt;</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">-</span><span class="mi">1</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">min</span> <span class="o">=</span> <span class="n">sq</span> <span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span> <span class="p">;</span> <span class="p">(</span><span class="n">sq</span> <span class="o">=</span> <span class="n">root</span> <span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">root</span><span class="o">++</span><span class="p">)</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">sq</span> <span class="p">;</span>
+       
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">min</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span> <span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>

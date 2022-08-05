@@ -1,0 +1,37 @@
+<h3 id="접근">접근</h3>
+<p>제약이 크지 않아서 간단하게 sort 함수를 사용했다.</p>
+
+<h3 id="코드">코드</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span> <span class="p">;</span>
+
+<span class="kt">bool</span>
+<span class="nf">compare</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">tc_cnt</span> <span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">tc_cnt</span> <span class="p">;</span>
+
+    <span class="kt">int</span> <span class="o">**</span> <span class="n">tc_arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="o">*</span> <span class="p">[</span><span class="n">tc_cnt</span><span class="p">]</span> <span class="p">;</span>    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">tc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">tc</span> <span class="o">&lt;</span> <span class="n">tc_cnt</span><span class="p">;</span> <span class="n">tc</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">tc_arr</span><span class="p">[</span><span class="n">tc</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">tc_arr</span><span class="p">[</span><span class="n">tc</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">;</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">tc_arr</span><span class="p">[</span><span class="n">tc</span><span class="p">],</span> <span class="n">tc_arr</span><span class="p">[</span><span class="n">tc</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">compare</span><span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">tc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">tc</span> <span class="o">&lt;</span> <span class="n">tc_cnt</span><span class="p">;</span> <span class="n">tc</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">tc_arr</span><span class="p">[</span><span class="n">tc</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="p">;</span>
+        <span class="k">delete</span><span class="p">[]</span> <span class="n">tc_arr</span><span class="p">[</span><span class="n">tc</span><span class="p">]</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">tc_arr</span> <span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span> <span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>

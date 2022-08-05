@@ -1,0 +1,49 @@
+<h3 id="문제">문제</h3>
+<p>양의 정수 n이 주어졌을 때, 이를 이진수로 나타냈을 때 1의 위치를 모두 찾는 프로그램을 작성하시오. 최하위 비트(least significant bit, lsb)의 위치는 0이다</p>
+
+<h3 id="접근">접근</h3>
+<p>다음 예시를 생각해 보았다.</p>
+<ul>
+  <li>13 = 0b1101</li>
+  <li>13 / 2^0 % 2 = 1</li>
+  <li>13 / 2^1 % 2 = 0</li>
+  <li>13 / 2^2 % 2 = 1</li>
+  <li>13 / 2^3 % 2 = 1</li>
+  <li>13 / 2^4 % 2 =&gt; 13 / 2^k 가 1보다 작아지면 break</li>
+</ul>
+
+<p>추가적으로, pow() 함수를 사용하지 않고 exp에 2를 곱해가며 계산했다.</p>
+
+<h3 id="코드">코드</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span> <span class="p">;</span>
+
+<span class="kt">void</span>
+<span class="nf">print_ones_positions</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">exp</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">n</span> <span class="o">/</span> <span class="n">exp</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">pos</span><span class="o">++</span><span class="p">,</span> <span class="n">exp</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">bin_num</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">/</span> <span class="n">exp</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bin_num</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pos</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">tc_cnt</span> <span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">tc_cnt</span> <span class="p">;</span>
+
+    <span class="kt">int</span> <span class="o">*</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">tc_cnt</span><span class="p">]</span> <span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tc_cnt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tc_cnt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">print_ones_positions</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">nums</span> <span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span> <span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
