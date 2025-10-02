@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: DevLog
+title: Seo-ye
 email: kimseoye15@gmail.com
 author: KimSeoYe
 
@@ -156,8 +156,8 @@ yat:
 # Page default value
 defaults:
   home:
-    heading: "DevLog"
-    subheading: "A record of failure and growth"
+    heading: "Seo-ye Kim"
+    subheading: ""
     # banner: "Your image url"
 
 # Banner default settings
